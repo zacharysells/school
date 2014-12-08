@@ -1,0 +1,10 @@
+Script started on Wed 15 May 2013 10:49:04 PM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw6 $[00m make matrix_main 
+g++ -c -ggdb main.cpp
+g++ -ggdb main.o -o matrix_main
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw6 $[00m ./a[Kmatrix_main 
+IndexOutOfBoundsException Caught!
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw6 $[00m exit
+exit
+
+Script done on Wed 15 May 2013 10:49:16 PM PDT

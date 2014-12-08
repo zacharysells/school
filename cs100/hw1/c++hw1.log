@@ -1,0 +1,27 @@
+Script started on Tue 09 Apr 2013 08:55:12 PM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw1 $[00m g_[K++ stack.cc
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw1 $[00m .a[K/a.out
+--------------------------------------------------------
+To invoke testing subroutine, enter 'quit' and then
+enter 'hello' as a test word. To quit program, enter ^d
+--------------------------------------------------------
+Enter word: quit
+-------------------------------------------------
+Enter test word: hello
+Testing stack.pop()
+Expected popped element: o | Actual popped element: o
+-------------------------------------------------
+Printing top of stack using stack.top()...
+Expected output: l | Actual ouput: l
+-------------------------------------------------
+Popping elements until stack is empty. This will test both pop() and isEmpty()
+Popped off element: l
+Popped off element: l
+Popped off element: e
+Popped off element: h
+Stack is empty
+-------------------------------------------------
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw1 $[00m exit
+exit
+
+Script done on Tue 09 Apr 2013 08:55:29 PM PDT

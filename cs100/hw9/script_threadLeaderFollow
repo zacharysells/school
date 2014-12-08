@@ -1,0 +1,88 @@
+Script started on Thu 06 Jun 2013 08:13:43 PM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw9 $[00m make
+g++ -c multThreadClient.cc 
+g++ -pthread multThreadClient.o -o multThreadClient
+g++ -c threadRequestServ.cc
+g++ -pthread threadRequestServ.o -o threadRequestServ
+g++ -c leaderFollowServ.cc
+g++ -pthread leaderFollowServ.o -o leaderFollowServ
+g++ -c threadPoolServ.cc
+g++ -pthread threadPoolServ.o -o threadPoolServ
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw9 $[00m makeexit./multThreadClient 
+Time to do 10 copies: 0.052003 seconds
+
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw9 $[00m ls testdir*
+testdir0:
+legal      magic       mailcap        mtab         nanorc    passwd  wodim.conf
+localtime  magic.mime  mailcap.order  mtools.conf  networks  wgetrc  words
+
+testdir1:
+legal      magic       mailcap        mtab         nanorc    passwd  wodim.conf
+localtime  magic.mime  mailcap.order  mtools.conf  networks  wgetrc  words
+
+testdir2:
+legal      magic       mailcap        mtab         nanorc    passwd  wodim.conf
+localtime  magic.mime  mailcap.order  mtools.conf  networks  wgetrc  words
+
+testdir3:
+legal      magic       mailcap        mtab         nanorc    passwd  wodim.conf
+localtime  magic.mime  mailcap.order  mtools.conf  networks  wgetrc  words
+
+testdir4:
+legal      magic       mailcap        mtab         nanorc    passwd  wodim.conf
+localtime  magic.mime  mailcap.order  mtools.conf  networks  wgetrc  words
+
+testdir5:
+legal      magic       mailcap        mtab         nanorc    passwd  wodim.conf
+localtime  magic.mime  mailcap.order  mtools.conf  networks  wgetrc  words
+
+testdir6:
+legal      magic       mailcap        mtab         nanorc    passwd  wodim.conf
+localtime  magic.mime  mailcap.order  mtools.conf  networks  wgetrc  words
+
+testdir7:
+legal      magic       mailcap        mtab         nanorc    passwd  wodim.conf
+localtime  magic.mime  mailcap.order  mtools.conf  networks  wgetrc  words
+
+testdir8:
+legal      magic       mailcap        mtab         nanorc    passwd  wodim.conf
+localtime  magic.mime  mailcap.order  mtools.conf  networks  wgetrc  words
+
+testdir9:
+legal      magic       mailcap        mtab         nanorc    passwd  wodim.conf
+localtime  magic.mime  mailcap.order  mtools.conf  networks  wgetrc  words
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw9 $[00m ./compareFiles 
+Testing  testdir0 /words...
+Difference between files: 
+
+Testing  testdir1 /words...
+Difference between files: 
+
+Testing  testdir2 /words...
+Difference between files: 
+
+Testing  testdir3 /words...
+Difference between files: 
+
+Testing  testdir4 /words...
+Difference between files: 
+
+Testing  testdir5 /words...
+Difference between files: 
+
+Testing  testdir6 /words...
+Difference between files: 
+
+Testing  testdir7 /words...
+Difference between files: 
+
+Testing  testdir8 /words...
+Difference between files: 
+
+Testing  testdir9 /words...
+Difference between files: 
+
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw9 $[00m exit
+exit
+
+Script done on Thu 06 Jun 2013 08:14:10 PM PDT

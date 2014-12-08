@@ -1,0 +1,43 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/zacharysells/Documents/cs161L/lab5/mips_datapath/mips_datapath_tb_isim_beh.exe -prj /home/zacharysells/Documents/cs161L/lab5/mips_datapath/mips_datapath_tb_beh.prj work.mips_datapath_tb 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 2
+Turning on mult-threading, number of parallel sub-compilation jobs: 4 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/zacharysells/Documents/cs161L/lab5/mips_datapath/../../lab4/alu_datapath/cpu_constant_library.vhd" into library work
+Parsing VHDL file "/home/zacharysells/Documents/cs161L/lab5/mips_datapath/../cpu_component_library.vhd" into library work
+Parsing VHDL file "/home/zacharysells/Documents/cs161L/lab5/mips_datapath/../cpu_components.vhd" into library work
+Parsing VHDL file "/home/zacharysells/Documents/cs161L/lab5/mips_datapath/../cs161_processor.vhd" into library work
+WARNING:HDLCompiler:946 - "/home/zacharysells/Documents/cs161L/lab5/mips_datapath/../cs161_processor.vhd" Line 86: Actual for formal port select_in is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/zacharysells/Documents/cs161L/lab5/mips_datapath/../cs161_processor.vhd" Line 88: Actual for formal port data_1_in is neither a static name nor a globally static expression
+Parsing VHDL file "/home/zacharysells/Documents/cs161L/lab5/mips_datapath/mips_datapath_tb.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 38516 KB
+Fuse CPU Usage: 3210 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package cpu_component_library
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package textio
+Compiling package cpu_constant_library
+Compiling architecture behavioral of entity generic_register [\generic_register(32)\]
+Compiling architecture behavioral of entity mux_2_1 [\mux_2_1(32)\]
+Compiling architecture behavioral of entity mux_2_1 [\mux_2_1(5)\]
+Compiling architecture behavioral of entity memory [\memory("init2.coe")(1,9)\]
+Compiling architecture behavioral of entity control_unit [control_unit_default]
+Compiling architecture behavioral of entity alu_control [alu_control_default]
+Compiling architecture behavioral of entity alu [alu_default]
+Compiling architecture behavioral of entity cpu_registers [cpu_registers_default]
+Compiling architecture behavioral of entity cs161_processor [cs161_processor_default]
+WARNING:HDLCompiler:746 - "/build/xfndry10/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
+WARNING:HDLCompiler:220 - "/build/xfndry10/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
+Compiling architecture behavior of entity mips_datapath_tb
+Time Resolution for simulation is 1ps.
+Waiting for 8 sub-compilation(s) to finish...
+Compiled 27 VHDL Units
+Built simulation executable /home/zacharysells/Documents/cs161L/lab5/mips_datapath/mips_datapath_tb_isim_beh.exe
+Fuse Memory Usage: 97432 KB
+Fuse CPU Usage: 3460 ms
+GCC CPU Usage: 960 ms

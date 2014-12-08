@@ -1,0 +1,5 @@
+vhdl work "../../lab4/alu_datapath/cpu_constant_library.vhd"
+vhdl work "../cpu_component_library.vhd"
+vhdl work "../cpu_components.vhd"
+vhdl work "../cs161_processor.vhd"
+vhdl work "mips_datapath_tb.vhd"

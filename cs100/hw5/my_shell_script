@@ -1,0 +1,198 @@
+Script started on Wed 08 May 2013 11:27:52 PM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw5 $[00m make my_shell
+g++ -c my_shell.cc
+g++ -ggdb my_shell.o -o my_shell
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw5 $[00m ./my_shell 
+% ls
+game.h		 main.cc      my_shell	   my_shell_script
+guessingGame.cc  Makefile     my_shell.cc  polymorphism_script
+hangman.cc	 mathGame.cc  my_shell.o
+% ls -l -R
+.:
+total 108
+-rw-r--r-- 1 zacharysells zacharysells   498 May  8 23:23 game.h
+-rw-r--r-- 1 zacharysells zacharysells  1123 May  7 20:09 guessingGame.cc
+-rw-r--r-- 1 zacharysells zacharysells  1989 May  7 19:53 hangman.cc
+-rw-r--r-- 1 zacharysells zacharysells  1211 May  7 20:08 main.cc
+-rw-r--r-- 1 zacharysells zacharysells   670 May  8 23:24 Makefile
+-rw-r--r-- 1 zacharysells zacharysells  1908 May  7 20:21 mathGame.cc
+-rwxr-xr-x 1 zacharysells zacharysells 32868 May  8 23:27 my_shell
+-rw-r--r-- 1 zacharysells zacharysells  3877 May  8 22:52 my_shell.cc
+-rw-r--r-- 1 zacharysells zacharysells 40268 May  8 23:27 my_shell.o
+-rw-r--r-- 1 zacharysells zacharysells     0 May  8 23:27 my_shell_script
+-rw-r--r-- 1 zacharysells zacharysells  3875 May  8 23:27 polymorphism_script
+% cat Make	file > out.txt
+% ls
+game.h		 main.cc      my_shell	   my_shell_script
+guessingGame.cc  Makefile     my_shell.cc  out.txt
+hangman.cc	 mathGame.cc  my_shell.o   polymorphism_script
+% cat < out.txt | tr A-Z a-z | tee out2.txt   | tr a-z A-A Z > out3.txt
+% ls
+game.h		 main.cc      my_shell	   my_shell_script  out.txt
+guessingGame.cc  Makefile     my_shell.cc  out2.txt	    polymorphism_script
+hangman.cc	 mathGame.cc  my_shell.o   out3.txt
+% cat out2.txt
+
+all: my_shell polymorphism
+
+my_shell: my_shell.o
+	g++ -ggdb my_shell.o -o my_shell
+
+my_shell.o: my_shell.cc
+	g++ -c my_shell.cc
+	
+polymorphism: main.o game.h hangman.o mathgame.o guessinggame.o
+	g++ -ggdb main.o hangman.o mathgame.o guessinggame.o -o polymorphism
+	
+main.o: main.cc game.h
+	g++ -c main.cc
+	
+hangman.o: hangman.cc game.h
+	g++ -c hangman.cc
+	
+mathgame.o: mathgame.cc game.h
+	g++ -c mathgame.cc
+	
+guessinggame.o: guessinggame.cc game.h
+	g++ -c guessinggame.cc
+	
+clean: 
+	rm my_shell polymorphism my_shell.o main.o hangman.o mathgame.o guessinggame.o my_shell.pdf
+
+strip: 
+	strip my_shell
+
+print:
+	a2ps -r --columns=1 --borders=0 -b -p pdf my_shell.cc
+	
+
+
+
+% cat out3.txt
+
+ALL: MY_SHELL POLYMORPHISM
+
+MY_SHELL: MY_SHELL.O
+	G++ -GGDB MY_SHELL.O -O MY_SHELL
+
+MY_SHELL.O: MY_SHELL.CC
+	G++ -C MY_SHELL.CC
+	
+POLYMORPHISM: MAIN.O GAME.H HANGMAN.O MATHGAME.O GUESSINGGAME.O
+	G++ -GGDB MAIN.O HANGMAN.O MATHGAME.O GUESSINGGAME.O -O POLYMORPHISM
+	
+MAIN.O: MAIN.CC GAME.H
+	G++ -C MAIN.CC
+	
+HANGMAN.O: HANGMAN.CC GAME.H
+	G++ -C HANGMAN.CC
+	
+MATHGAME.O: MATHGAME.CC GAME.H
+	G++ -C MATHGAME.CC
+	
+GUESSINGGAME.O: GUESSINGGAME.CC GAME.H
+	G++ -C GUESSINGGAME.CC
+	
+CLEAN: 
+	RM MY_SHELL POLYMORPHISM MY_SHELL.O MAIN.O HANGMAN.O MATHGAME.O GUESSINGGAME.O MY_SHELL.PDF
+
+STRIP: 
+	STRIP MY_SHELL
+
+PRINT:
+	A2PS -R --COLUMNS=1 --BORDERS=0 -B -P PDF MY_SHELL.CC
+	
+
+
+
+% rm out. 2.txt
+% rm out3.txt
+% ls
+game.h		 main.cc      my_shell	   my_shell_script
+guessingGame.cc  Makefile     my_shell.cc  out.txt
+hangman.cc	 mathGame.cc  my_shell.o   polymorphism_script
+% cat out.txt       < out.txt | tee newOut      out2.txt > out3.txt &
+% ls
+game.h		 main.cc      my_shell	   my_shell_script  out.txt
+guessingGame.cc  Makefile     my_shell.cc  out2.txt	    polymorphism_script
+hangman.cc	 mathGame.cc  my_shell.o   out3.txt
+% cat out3.txt
+
+all: my_shell polymorphism
+
+my_shell: my_shell.o
+	g++ -ggdb my_shell.o -o my_shell
+
+my_shell.o: my_shell.cc
+	g++ -c my_shell.cc
+	
+polymorphism: main.o game.h hangman.o mathGame.o guessingGame.o
+	g++ -ggdb main.o hangman.o mathGame.o guessingGame.o -o polymorphism
+	
+main.o: main.cc game.h
+	g++ -c main.cc
+	
+hangman.o: hangman.cc game.h
+	g++ -c hangman.cc
+	
+mathGame.o: mathGame.cc game.h
+	g++ -c mathGame.cc
+	
+guessingGame.o: guessingGame.cc game.h
+	g++ -c guessingGame.cc
+	
+clean: 
+	rm my_shell polymorphism my_shell.o main.o hangman.o mathGame.o guessingGame.o my_shell.pdf
+
+strip: 
+	strip my_shell
+
+print:
+	a2ps -R --columns=1 --borders=0 -B -P pdf my_shell.cc
+	
+
+
+
+% l cat out2.txt
+
+all: my_shell polymorphism
+
+my_shell: my_shell.o
+	g++ -ggdb my_shell.o -o my_shell
+
+my_shell.o: my_shell.cc
+	g++ -c my_shell.cc
+	
+polymorphism: main.o game.h hangman.o mathGame.o guessingGame.o
+	g++ -ggdb main.o hangman.o mathGame.o guessingGame.o -o polymorphism
+	
+main.o: main.cc game.h
+	g++ -c main.cc
+	
+hangman.o: hangman.cc game.h
+	g++ -c hangman.cc
+	
+mathGame.o: mathGame.cc game.h
+	g++ -c mathGame.cc
+	
+guessingGame.o: guessingGame.cc game.h
+	g++ -c guessingGame.cc
+	
+clean: 
+	rm my_shell polymorphism my_shell.o main.o hangman.o mathGame.o guessingGame.o my_shell.pdf
+
+strip: 
+	strip my_shell
+
+print:
+	a2ps -R --columns=1 --borders=0 -B -P pdf my_shell.cc
+	
+
+
+
+% quit
+Killed
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw5 $[00m exit
+exit
+
+Script done on Wed 08 May 2013 11:30:07 PM PDT

@@ -1,0 +1,2 @@
+work	"alu_control.vhd"
+work	"cpu_constant_library.vhd"

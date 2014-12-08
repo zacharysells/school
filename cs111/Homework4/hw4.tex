@@ -1,0 +1,241 @@
+
+\documentclass{article}
+
+\usepackage{fullpage,latexsym,picinpar,amsmath,amsfonts,graphicx}
+
+\input{macros.tex}
+
+\begin{document}
+
+% v -- YOUR NAME and SID in the braces
+\student{Zachary \c Sells}{861013217}
+% v -- YOUR NAME and SID in the braces
+% v -- ASSIGNMENT NUMBER in the braces
+\assignment{3} 
+% v-- DUE DATE in the braces
+\duedate{Friday, February 22} 
+
+
+\centerline{\large \bf CS/MATH111 ASSIGNMENT 4}
+\centerline{due Thursday, March 7 (8AM)}
+
+\vskip 0.2in
+\noindent{\bf Individual assignment:} Problems 1 and 2.
+
+\noindent{\bf Group assignment:} Problems 1,2 and 3.
+
+\vskip 0.1in
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}
+Give the asymptotic value (using the $\Theta$-notation)
+for the number of letters that will be printed by the algorithms below.
+Your solution needs to consist of an appropriate recurrence 
+equation and its solution, with a brief justification.
+
+\bigskip
+\noindent
+(a)\ \ 
+\begin{minipage}[t]{3in}
+\begin{tabbing}
+aaa \= aaa \= aaa \= aaa \=  \kill
+\textbf{Algorithm} \textsc{PrintXs} $(n: \mbox{\bf integer})$ \\
+          \> \textbf{if} $n < 3$ \\
+          \>\>  print(``X") \\
+          \>\textbf{else} \\
+          \>\>  \textsc{PrintXs}$(\ceiling{n/3})$\\
+          \>\>  \textsc{PrintXs}$(\ceiling{n/3})$\\
+          \>\>  \textsc{PrintXs}$(\ceiling{n/3})$\\
+          \>\>  \textsc{PrintXs}$(\ceiling{n/3})$\\
+      \>\> \textbf{for} $i \leftarrow 1$ \textbf{to} $2n$ \textbf{do} print(``X")
+\end{tabbing}
+\end{minipage}
+
+\bigskip
+\noindent
+(b)\ \
+\begin{minipage}[t]{3in}
+\begin{tabbing}
+aaa \= aaa \= aaa \= aaa \=  \kill
+\textbf{Algorithm} \textsc{PrintYs} $(n: \mbox{\bf integer})$ \\
+          \> \textbf{if} $n < 2$ \\
+          \>\>  print(``Y") \\
+          \>\textbf{else} \\
+          \>\>  \textbf{for} $j \leftarrow 1$ \textbf{to} $7$ 
+					\textbf{do} \textsc{PrintYs}$(\floor{n/2})$\\
+      \>\> \textbf{for} $i \leftarrow 1$ \textbf{to} $n^3$ \textbf{do} print(``Y")
+\end{tabbing}
+\end{minipage}
+
+\bigskip
+\noindent
+(c)\ \ 
+\begin{minipage}[t]{3in}
+\begin{tabbing}
+aaa \= aaa \= aaa \= aaa \=  \kill
+\textbf{Algorithm} \textsc{PrintZs} $(n: \mbox{\bf integer})$ \\
+          \> \textbf{if} $n < 2$ \\
+          \>\>  print(``Z") \\
+          \>\textbf{else} \\
+          \>\>  \textbf{for} $j \leftarrow 1$ \textbf{to} $8$ 
+					\textbf{do} \textsc{PrintZs}$(\floor{n/2})$\\
+      \>\> \textbf{for} $i \leftarrow 1$ \textbf{to} $n^3$ \textbf{do} print(``Z")
+\end{tabbing}
+\end{minipage}
+
+\bigskip
+\noindent
+(d)\ \ 
+\begin{minipage}[t]{3in}
+\begin{tabbing}
+aaa \= aaa \= aaa \= aaa \=  \kill
+\textbf{Algorithm} \textsc{PrintUs} $(n: \mbox{\bf integer})$ \\
+          \> \textbf{if} $n < 4$ \\
+          \>\>  print(``U") \\
+          \>\textbf{else} \\
+          \>\>  \textsc{PrintUs}$(\ceiling{n/4})$\\
+          \>\>  \textsc{PrintUs}$(\floor{n/4})$\\
+      \>\> \textbf{for} $i \leftarrow 1$ \textbf{to} $11$ \textbf{do} print(``U")
+\end{tabbing}
+\end{minipage}
+\bigskip
+\ 
+
+
+\bigskip
+\noindent
+(e)\ \ 
+\begin{minipage}[t]{3in}
+\begin{tabbing}
+aaa \= aaa \= aaa \= aaa \=  \kill
+\textbf{Algorithm} \textsc{PrintVs} $(n: \mbox{\bf integer})$ \\
+          \> \textbf{if} $n < 3$ \\
+          \>\>  print(``V") \\
+          \>\textbf{else} \\
+          \>\>  \textbf{for} $j \leftarrow 1$ \textbf{to} $10$ 
+					\textbf{do} \textsc{PrintVs}$(\floor{n/3})$\\
+      \>\> \textbf{for} $i \leftarrow 1$ \textbf{to} $2n^3$ \textbf{do} print(``V")
+\end{tabbing}
+\end{minipage}
+\bigskip
+\
+
+
+\end{problem}
+
+\textbf{Problem 1 Solution}
+\\*
+Following solutions from masters theorem: 
+\\*If $b > 1, a \geq 1, c > 0, d \geq 0,$ and $T(n) = a*T(\frac{n}{b}) + c*n^d$
+\\*\\*Then $T(n) = \theta(n^d)$ if $a < b^d$
+\\*\\*And $T(n) = \theta(n^d * log(n))$ if $a = b^d$
+\\*\\*And $T(n) = \theta(n^{log_b^a})$ if $a > b^d$
+\\*\\*
+\textbf{Solution to part (a):}
+\\*
+Appropriate recurrence equation: $T(n) = 4T(\frac{n}{3}) + 2n$
+\\*Solution: $\theta(n^{log_3^4})$ because $a > b^d$ or $4 > 3^1$
+\\*\\*
+\textbf{Solution to part (b):}
+\\*
+Appropriate recurrence equation: $T(n) = 7T(\frac{n}{2}) + n^3$
+\\*Solution: $\theta(n^3)$ because $a < b^d$ or $7 < 2^3$
+\\*\\*
+\textbf{Solution to part (c):}
+\\*
+Appropriate recurrence equation: $T(n) = 8T(\frac{n}{2}) + n^3$
+\\*Solution: $\theta(n^3 * log(n))$ because $a = b^d$ or $8 = 2^3$
+\\*\\*
+\textbf{Solution to part (d):}
+\\*
+Appropriate recurrence equation: $T(n) = 2T(\frac{n}{4}) + 11$
+\\*Solution: $\theta(n^{1/2})$ because $a > b^d$ or $2 > 4^0$
+\\*
+\textbf{Solution to part (e):}
+\\*
+Appropriate recurrence equation: $T(n) = 10T(\frac{n}{3}) + 2n^3$
+\\*Solution: $\theta(n^3)$ because $a < b^d$ or $10 < 3^3$
+\\*\\*
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}
+Determine (using the inclusion-exclusion principle)
+the number of integer solutions of the equation:
+%
+\begin{eqnarray*}
+x + y + z &=& 20,
+\end{eqnarray*}
+%
+under the constraints 
+%
+\begin{eqnarray*}
+        1 \;\le\; x \;\le\; 5 \\
+        3 \;\le\; y \;\le\; 9 \\
+        1\;\le\; z  \;\le\; 8
+\end{eqnarray*}
+%
+Show your work.
+\end{problem}
+
+\textbf{Problem 2 Solution}
+\\*\\*
+Rewrite conditions to make lower bound $0$ for all three variables.
+\\*Subtract $1$ on each side from X's restraints to get: $x \geq 4$
+\\*Which would make the original equation = $x^\prime + y + z = 19$
+\\*Subtract $3$ on each side from Y's restraints to get: $y \geq 6$
+\\*Which would make the original equation = $x^\prime + y^\prime + z = 16$
+\\*Subtract $1$ on each side from Z's restraints to get: $z \geq 7$
+\\*Which would make the original equation = $x^\prime + y^\prime + z^\prime = 15$
+\\*\\*
+
+We know how to calculate lower bounds so we negate the restrictions to get:
+\\*$x \geq 5$ OR $y \geq 7$ OR $z \geq 8$
+Now we know that the number of solutions with the original restrictions is equal to the TOTAL number of solutions(with no restrictions) minus the number of solutions with the negated restrictions.
+\\*\\*
+So... $S(c) = S - S^\prime(c)$ Where S(c) denotes the number of solutions given the original conditions. And $S^\prime(c)$ denotes the number of solutions given the negated conditions.
+\\*\\*
+To find $S^\prime(c)$ we use inclusion exclusion. Eg..
+\\*$S^\prime(c) = S(x \geq 5) + S(y \geq 7) + S(z \geq 8) - S(x \geq 5, y \geq 7) - S(x \geq 5, z \geq 8) - S(y \geq 7, z \geq 8) + S(x \geq 5, y \geq 7, z \geq 8)$
+\\*\\*
+Calculations give ${12 \choose 2} + {10 \choose 2} + {9 \choose 2} - {5 \choose 2} - {4 \choose 2} - {15 \choose 15}$ 
+
+This simplifies to $130$. So $S^\prime(c) = 130$
+\\*\\*
+The total number of solutions with no conditions is $S = {17 \choose 2} = 136$
+\\*\\*
+S(n) = S - $S^\prime = 136 - 130 = 6$
+\\*\\*\\*
+The total number of solutions with original conditions is $6$
+\\*\\*
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}
+Little Red Riding Hood is assembling a fruit basket for her sick grandmother.
+The basket will contain 26 fruit, including
+apples, bananas, mangos and strawberries (and no other fruit). 
+The basket must contain
+%
+\begin{itemize}
+	\item at least $6$ apples, 
+	\item at least $4$ bananas, 
+	\item at least $5$ mangos, and
+	\item at least $3$ and not more than $5$ strawberries. 
+\end{itemize}
+%
+Determine the number of ways to assemble the fruit basked.
+\end{problem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vskip 0.1in
+\paragraph{Submission.}
+To submit the homework, you need to upload the pdf file into ilearn by 8AM on Thursday, March 7,
+and turn-in a paper copy in class.
+
+
+\end{document}
+

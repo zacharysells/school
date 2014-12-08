@@ -1,0 +1,3 @@
+vhdl work "cpu_constant_library.vhd"
+vhdl work "alu_control.vhd"
+vhdl work "alu_control_testbench.vhd"

@@ -1,0 +1,62 @@
+Script started on Wed 24 Apr 2013 06:58:18 PM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw3 $[00m make unix_io
+g++ -c unix_io.cc
+g++ unix_io.o -o unix_io
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw3 $[00m /[K./unix_io u[K/usr/share/dic t/linux[K[K[K[K[Kamerican-english 2
+Timing how long 1 function calls takes for get and put function...
+Elapsed Wall Clock Time: 0.048773 seconds
+Elapsed User Time: 0.048003 seconds
+Elapsed System Time: 0 seconds
+
+Timing how long 1 function calls takes for read and write function 
+one char at a time...
+Elapsed Wall Clock Time: 2.551 seconds
+Elapsed User Time: 0.084005 seconds
+Elapsed System Time: 2.46415 seconds
+
+Timing how long 1 function calls takes for read and write function 
+one buffer(BUFSIZ) at a time...
+Elapsed Wall Clock Time: 0.008599 seconds
+Elapsed User Time: 0 seconds
+Elapsed System Time: 0.004 seconds
+
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw3 $[00m ./unix_io /usr/share/dictt/american-english 2[K3
+Timing how long 1 function calls takes for get and put function...
+Elapsed Wall Clock Time: 0.054186 seconds
+Elapsed User Time: 0.056003 seconds
+Elapsed System Time: 0 seconds
+
+Timing how long 1 function calls takes for read and write function 
+one char at a time...
+Elapsed Wall Clock Time: 2.71671 seconds
+Elapsed User Time: 0.096006 seconds
+Elapsed System Time: 2.61216 seconds
+
+Timing how long 1 function calls takes for read and write function 
+one buffer(BUFSIZ) at a time...
+Elapsed Wall Clock Time: 0.005967 seconds
+Elapsed User Time: 0 seconds
+Elapsed System Time: 0 seconds
+
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw3 $[00m ./unix_io /usr/share/dictt/american-english 3][K[K4[K5
+Timing how long 1 function calls takes for get and put function...
+Elapsed Wall Clock Time: 0.052072 seconds
+Elapsed User Time: 0.052003 seconds
+Elapsed System Time: 0 seconds
+
+Timing how long 1 function calls takes for read and write function 
+one char at a time...
+Elapsed Wall Clock Time: 2.54648 seconds
+Elapsed User Time: 0.052003 seconds
+Elapsed System Time: 2.48815 seconds
+
+Timing how long 1 function calls takes for read and write function 
+one buffer(BUFSIZ) at a time...
+Elapsed Wall Clock Time: 0.005821 seconds
+Elapsed User Time: 0 seconds
+Elapsed System Time: 0.004 seconds
+
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw3 $[00m exit
+exit
+
+Script done on Wed 24 Apr 2013 06:59:12 PM PDT

@@ -1,0 +1,75 @@
+Script started on Thu 02 May 2013 12:09:36 AM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw4 $[00m make clean
+rm my_shell my_shell.o handle_signals handle_signals.o testLinkedString testLinkedString.o String.o
+rm: cannot remove `handle_signals': No such file or directory
+rm: cannot remove `handle_signals.o': No such file or directory
+rm: cannot remove `testLinkedString': No such file or directory
+rm: cannot remove `testLinkedString.o': No such file or directory
+rm: cannot remove `String.o': No such file or directory
+make: *** [clean] Error 1
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw4 $[00m make my_shell
+g++ -c my_shell.cc
+g++ -ggdb my_shell.o -o my_shell
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw4 $[00m ./a[Kmy_shell
+% /bin/ls
+a.out		   handle_signals_script  my_shell_script  test.h
+bash_cmds	   Makefile		  out.txt	   testLinkedString.cc
+bashCMD_script	   my_shell		  String.cc
+foo.cpp		   my_shell.cc		  String.h
+handle_signals.cc  my_shell.o		  test.cc
+% /bin/ls > out.txt
+% /bin/ls  cat out.txt
+a.out
+bash_cmds
+bashCMD_script
+foo.cpp
+handle_signals.cc
+handle_signals_script
+Makefile
+my_shell
+my_shell.cc
+my_shell.o
+my_shell_script
+out.txt
+String.cc
+String.h
+test.cc
+test.h
+testLinkedString.cc
+% /bin/cat < o0ut   ut.txt                 usr/bin/tee new.txt       new.txt < out.txt
+a.out
+bash_cmds
+bashCMD_script
+foo.cpp
+handle_signals.cc
+handle_signals_script
+Makefile
+my_shell
+my_shell.cc
+my_shell.o
+my_shell_script
+out.txt
+String.cc
+String.h
+test.cc
+test.h
+testLinkedString.cc
+% /bin/ls
+a.out		   handle_signals_script  my_shell_script  test.cc
+bash_cmds	   Makefile		  new.txt	   test.h
+bashCMD_script	   my_shell		  out.txt	   testLinkedString.cc
+foo.cpp		   my_shell.cc		  String.cc
+handle_signals.cc  my_shell.o		  String.h
+% /bin/l rm r new.txt
+% /bin/rm out.txt
+% /in  i bin/ls
+a.out		handle_signals.cc      my_shell.cc	String.h
+bash_cmds	handle_signals_script  my_shell.o	test.cc
+bashCMD_script	Makefile	       my_shell_script	test.h
+foo.cpp		my_shell	       String.cc	testLinkedString.cc
+% quit
+Killed
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw4 $[00m exit
+exit
+
+Script done on Thu 02 May 2013 12:11:59 AM PDT

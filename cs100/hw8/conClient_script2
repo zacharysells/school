@@ -1,0 +1,53 @@
+Script started on Fri 31 May 2013 06:20:49 PM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw8/hw8/testdir2 $[00m ../conClientt 127.0.0.1 /etc
+Connected
+File Size: 306
+File Name: rc.local
+
+File Size: 121
+File Name: remote-login-service.conf
+
+File Size: 11
+File Name: debian_version
+
+File Size: 10333
+File Name: sensors3.conf
+
+File Size: 24269
+File Name: mime.types
+
+File Size: 19398
+File Name: services
+
+File Size: 110
+File Name: kernel-img.conf
+
+File Size: 349
+File Name: zsh_command_not_found
+
+File Size: 310
+File Name: resolv.conf
+
+File Size: 51
+File Name: vdpau_wrapper.cfg
+
+File Size: 839
+File Name: insserv.conf
+
+File Size: 198
+File Name: modules
+
+File Size: 19
+File Name: hostname
+
+^C
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw8/hw8/testdir2 $[00m ls
+conClient_script2  mime.types                 sensors3.conf
+debian_version     modules                    services
+hostname           rc.local                   vdpau_wrapper.cfg
+insserv.conf       remote-login-service.conf  zsh_command_not_found
+kernel-img.conf    resolv.conf
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw8/hw8/testdir2 $[00m exit
+exit
+
+Script done on Fri 31 May 2013 06:25:55 PM PDT

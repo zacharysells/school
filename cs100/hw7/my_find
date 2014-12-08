@@ -1,0 +1,89 @@
+#!/bin/bash
+
+DIR=$1
+NAME="";
+TYPE="-e";
+PRINT="false";
+EXEC="true";#true is a linux command that will do nothing
+
+i=1;
+
+
+function it_subdirs()
+{	
+	Directory=($1/*)
+	for files in ${Directory[@]}; do
+	
+		if [[ -d "$files" ]]; then
+			it_subdirs "$files"
+		fi
+	
+		if test $TYPE "$files"; then
+			if [[ `basename "$files"` == $NAME ]]; then
+				EVAL_EXEC=`echo $EXEC | sed 's,'{}','"$files"',g'`
+				eval $EVAL_EXEC
+				if $PRINT; then
+					echo "$files"
+				fi
+				continue
+			fi
+		fi
+	done
+}
+
+for arg in $@; do
+	
+	if [[ $arg == "-name" ]]; then
+		i=`expr $i + 1`
+		eval NAME="$"$i
+		continue
+	fi
+	
+	if [[ $arg == "-type" ]]; then
+		i=`expr $i + 1`
+		eval TYPE=-"$"$i
+		continue
+	fi
+	
+	if [[ $arg == "-print" ]]; then
+		PRINT="true"
+		i=`expr $i + 1`
+		continue
+	fi
+	
+	if [[ $arg == "-exec" ]]; then
+		i=`expr $i + 1`
+		eval temp_exec="$"$i
+		EXEC="$temp_exec"
+		for ((i = i + 1 ; i <= $# ; i++)); do
+			eval temp_exec="$"$i
+			EXEC=$EXEC" "$temp_exec
+		done
+		break
+	fi
+	
+	i=`expr $i + 1`
+done
+
+
+Directory=($1/*)
+for file in ${Directory[@]}; do
+	
+	if [[ -d $file ]]; then
+		it_subdirs $file
+	fi
+
+	if test $TYPE "$file"; then
+		if [[ `basename "$file"` == $NAME ]]; then
+			
+			EVAL_EXEC=`echo $EXEC | sed 's,'{}','"$file"',g'`
+			eval $EVAL_EXEC
+			
+			if $PRINT; then
+				echo "$file"
+			fi
+			continue
+		fi
+	fi
+
+done

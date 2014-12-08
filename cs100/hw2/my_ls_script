@@ -1,0 +1,103 @@
+Script started on Wed 17 Apr 2013 10:59:09 PM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m make my)l[K[K_ls
+g++ -c my_ls.cc
+g++ my_ls.o -o my_ls
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m ./my_ls 
+-rw-r--r-- 1 2265 Mon Oct  7 06:34:56 1974 Coins.cc
+-rw-r--r-- 1 544 Tue Apr 16 21:48:53 2013 Coins.h
+-rw-r--r-- 1 6496 Tue Apr 16 21:49:07 2013 Coins_script
+-rw-r--r-- 1 719 Wed Apr 17 22:58:02 2013 Makefile
+-rw-r--r-- 1 1179 Wed Apr 17 20:23:33 2013 bestMain.cc
+-rw-r--r-- 1 1245 Tue Apr 16 21:51:17 2013 betterMain.cc
+-rw-r--r-- 1 592 Tue Apr 16 21:53:04 2013 main.cc
+-rwxr-xr-x 1 41340 Fri Apr 12 16:57:48 2013 my_ls
+-rw-r--r-- 1 3977 Wed Apr 17 22:59:19 2013 my_ls.cc
+-rw-r--r-- 1 64832 Wed Apr 17 20:16:20 2013 my_ls.o
+-rw-r--r-- 1 0 Wed Apr 17 22:59:19 2013 my_ls_script
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m ls -lR
+.:
+total 144
+-rw-r--r-- 1 zacharysells zacharysells  1179 Apr 16 21:51 bestMain.cc
+-rw-r--r-- 1 zacharysells zacharysells  1245 Apr 16 21:53 betterMain.cc
+-rw-r--r-- 1 zacharysells zacharysells  2265 Apr 16 21:48 Coins.cc
+-rw-r--r-- 1 zacharysells zacharysells   544 Apr 16 21:49 Coins.h
+-rw-r--r-- 1 zacharysells zacharysells  6496 Apr 17 22:58 Coins_script
+-rw-r--r-- 1 zacharysells zacharysells   592 Apr 12 16:57 main.cc
+-rw-r--r-- 1 zacharysells zacharysells   719 Apr 17 20:23 Makefile
+-rwxr-xr-x 1 zacharysells zacharysells 41340 Apr 17 22:59 [0m[01;32mmy_ls[0m
+-rw-r--r-- 1 zacharysells zacharysells  3977 Apr 17 20:16 my_ls.cc
+-rw-r--r-- 1 zacharysells zacharysells 64832 Apr 17 22:59 my_ls.o
+-rw-r--r-- 1 zacharysells zacharysells     0 Apr 17 22:59 my_ls_script
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m ls -lR ~/C[KDocuments/cs100 [A
+/home/zacharysells/Documents/cs100:
+total 8
+drwxr-xr-x 2 zacharysells zacharysells 4096 Apr  9 21:33 [0m[01;34mhw1[0m
+drwxr-xr-x 2 zacharysells zacharysells 4096 Apr 17 22:59 [01;34mhw2[0m
+
+/home/zacharysells/Documents/cs100/hw1:
+total 36
+-rw-r--r-- 1 zacharysells zacharysells 1192 Apr  9 20:55 c++hw1.log
+-rw-r--r-- 1 zacharysells zacharysells  927 Apr  9 20:57 c++hw2.log
+-rw-r--r-- 1 zacharysells zacharysells 3057 Apr  9 21:33 hw1.tar.gz
+-rw-r--r-- 1 zacharysells zacharysells 5104 Apr  8 23:27 rolodex.cc
+-rw-r--r-- 1 zacharysells zacharysells 2144 Apr  9 20:46 stack.cc
+-rw-r--r-- 1 zacharysells zacharysells  412 Apr  9 20:40 stack.h
+-rw-r--r-- 1 zacharysells zacharysells   53 Apr  9 20:11 stack_words.txt
+-rw-r--r-- 1 zacharysells zacharysells 3328 Apr  9 21:27 systemsprog_hw.log
+
+/home/zacharysells/Documents/cs100/hw2:
+total 144
+-rw-r--r-- 1 zacharysells zacharysells  1179 Apr 16 21:51 bestMain.cc
+-rw-r--r-- 1 zacharysells zacharysells  1245 Apr 16 21:53 betterMain.cc
+-rw-r--r-- 1 zacharysells zacharysells  2265 Apr 16 21:48 Coins.cc
+-rw-r--r-- 1 zacharysells zacharysells   544 Apr 16 21:49 Coins.h
+-rw-r--r-- 1 zacharysells zacharysells  6496 Apr 17 22:58 Coins_script
+-rw-r--r-- 1 zacharysells zacharysells   592 Apr 12 16:57 main.cc
+-rw-r--r-- 1 zacharysells zacharysells   719 Apr 17 20:23 Makefile
+-rwxr-xr-x 1 zacharysells zacharysells 41340 Apr 17 22:59 [01;32mmy_ls[0m
+-rw-r--r-- 1 zacharysells zacharysells  3977 Apr 17 20:16 my_ls.cc
+-rw-r--r-- 1 zacharysells zacharysells 64832 Apr 17 22:59 my_ls.o
+-rw-r--r-- 1 zacharysells zacharysells     0 Apr 17 22:59 my_ls_script
+
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m my_ls ~/Documents/cs100ls -lR ~/Documents/cs100 [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1Pmy_ls
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C.my_ls ~/Documents/cs100 [A[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m [C/my_ls ~/Documents/cs1000[A[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m [C[C
+
+/home/zacharysells/Documents/cs100:
+drwxr-xr-x 2 4096 Thu Jun 20 18:12:32 1974 hw1
+	-rw-r--r-- 1 1192 Thu Jun 20 18:20:40 1974 c++hw1.log
+	-rw-r--r-- 1 927 Tue Apr  9 20:55:29 2013 c++hw2.log
+	-rw-r--r-- 1 3057 Tue Apr  9 20:57:38 2013 hw1.tar.gz
+	-rw-r--r-- 1 5104 Tue Apr  9 21:33:12 2013 rolodex.cc
+	-rw-r--r-- 1 2144 Mon Apr  8 23:27:47 2013 stack.cc
+	-rw-r--r-- 1 412 Tue Apr  9 20:46:28 2013 stack.h
+	-rw-r--r-- 1 53 Tue Apr  9 20:40:51 2013 stack_words.txt
+	-rw-r--r-- 1 3328 Tue Apr  9 20:11:09 2013 systemsprog_hw.log
+drwxr-xr-x 2 4096 Tue Apr  9 21:33:12 2013 hw2
+	-rw-r--r-- 1 2265 Sat Jun 22 07:04:40 1974 Coins.cc
+	-rw-r--r-- 1 544 Tue Apr 16 21:48:53 2013 Coins.h
+	-rw-r--r-- 1 6496 Tue Apr 16 21:49:07 2013 Coins_script
+	-rw-r--r-- 1 719 Wed Apr 17 22:58:02 2013 Makefile
+	-rw-r--r-- 1 1179 Wed Apr 17 20:23:33 2013 bestMain.cc
+	-rw-r--r-- 1 1245 Tue Apr 16 21:51:17 2013 betterMain.cc
+	-rw-r--r-- 1 592 Tue Apr 16 21:53:04 2013 main.cc
+	-rwxr-xr-x 1 41340 Fri Apr 12 16:57:48 2013 my_ls
+	-rw-r--r-- 1 3977 Wed Apr 17 22:59:19 2013 my_ls.cc
+	-rw-r--r-- 1 64832 Wed Apr 17 20:16:20 2013 my_ls.o
+	-rw-r--r-- 1 4096 Wed Apr 17 22:59:19 2013 my_ls_script
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m make clean
+rm my_ls.o Coins.o main.o betterMain.o bestMain.o Coins_best Coins_better Coins_main my_ls
+rm: cannot remove `Coins.o': No such file or directory
+rm: cannot remove `main.o': No such file or directory
+rm: cannot remove `betterMain.o': No such file or directory
+rm: cannot remove `bestMain.o': No such file or directory
+rm: cannot remove `Coins_best': No such file or directory
+rm: cannot remove `Coins_better': No such file or directory
+rm: cannot remove `Coins_main': No such file or directory
+make: *** [clean] Error 1
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m ls
+bestMain.cc    Coins.cc  Coins_script  Makefile  my_ls_script
+betterMain.cc  Coins.h   main.cc       my_ls.cc
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m exit
+exit
+
+Script done on Wed 17 Apr 2013 11:00:19 PM PDT

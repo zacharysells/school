@@ -1,0 +1,13 @@
+Zachary Sells
+zsell001@ucr.edu
+SID: 861013217
+CS161L Sect. 01
+Assignment 5
+
+Most debugging signals show the correct values. The register data signals are giving junk values but I suspect this is because of my incorrect implementation of the control_unit. After triple checking the connecting signals, I'm convinced that they are all connected correctly according to the diagram provided in the lab manual. 
+
+Included files:
+cpu_component_library.vhd
+cpu_components.vhd
+cs161_processor.vhd
+

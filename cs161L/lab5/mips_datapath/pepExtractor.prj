@@ -1,0 +1,2 @@
+work	"../../lab4/alu_datapath/cpu_constant_library.vhd"
+work	"../cpu_components.vhd"

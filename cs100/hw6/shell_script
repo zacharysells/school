@@ -1,0 +1,76 @@
+Script started on Wed 15 May 2013 10:32:17 PM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw6 $[00m make my_shell
+g++    -c -o my_shell.o my_shell.cc
+g++ -ggdb my_shell.o -o my_shell
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw6 $[00m ls
+Array.cpp  history_cmds  Makefile    Matrix.h  my_shell.cc  shell_script
+Array.h    main.cpp      Matrix.cpp  [0m[01;32mmy_shell[0m  my_shell.o
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw6 $[00m ./my_shell 
+% ls
+Array.cpp  history_cmds  Makefile    Matrix.h  my_shell.cc  shell_script
+Array.h    main.cpp	 Matrix.cpp  my_shell  my_shell.o
+% cat < my ain.cpp
+#include "Matrix.h"
+using namespace std;
+
+template< class T >
+void fillMatrix(Matrix <T> & m )
+{
+  int i, j;
+  for ( i = 0; i < m.numRows(); i++ )
+    m[i][0] = T();
+  for ( j = 0; j < m.numCols(); j++ )
+    m[0][j] = T();
+  for ( i = 1; i < m.numRows(); i++ )
+    for ( j = 1; j < m.numCols(); j++ )
+    {
+      m[i][j] = T(i * j);
+    }
+}
+int main()
+{
+	 try
+	 {
+		 Matrix < int > m(10,5);
+		 fillMatrix( m );
+		 cout << m << endl;
+		 Matrix < double > M(8,10);
+		 fillMatrix( M );
+		 cout << M;
+	 }
+	 catch(Array<int>::IndexOutOfBoundsException &e)
+	 {
+		 cout << "Index out of bounds exception caught...exiting" << endl;
+	 }
+	 
+	 return 0;
+}
+% tg aglyric
+[31mfile not found: [0m
+[31mfile not found: [0m
+^C% 
+% ls
+a.out	   history_cmds  Matrix.cpp	 mp3inf.txt	my_shell.cc
+Array.cpp  main.cpp	 Matrix.h	 mp3_title.txt	my_shell.o
+Array.h    Makefile	 mp3_artist.txt  my_shell	shell_script
+% rm mp3inf.txt mp3artist.txt^[[D^[[D^[[D^[[D^[[D^[[D^[[D^[[D^[[D                                              _artist.txt mp3_title.txt
+% ls
+a.out	   Array.h	 main.cpp  Matrix.cpp  my_shell     my_shell.o
+Array.cpp  history_cmds  Makefile  Matrix.h    my_shell.cc  shell_script
+% c quit
+Killed
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw6 $[00m ls
+[0m[01;32ma.out[0m      Array.h       main.cpp  Matrix.cpp  [01;32mmy_shell[0m     my_shell.o
+Array.cpp  history_cmds  Makefile  Matrix.h    my_shell.cc  shell_script
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw6 $[00m make clean
+rm my_shell my_shell.o matrix_main main.o 
+rm: cannot remove `matrix_main': No such file or directory
+rm: cannot remove `main.o': No such file or directory
+make: *** [clean] Error 1
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw6 $[00m ls
+[0m[01;32ma.out[0m      Array.h       main.cpp  Matrix.cpp  my_shell.cc
+Array.cpp  history_cmds  Makefile  Matrix.h    shell_script
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw6 $[00m rm a.out[K[K[K[K[K[K[K[Kexit
+exit
+
+Script done on Wed 15 May 2013 10:33:58 PM PDT

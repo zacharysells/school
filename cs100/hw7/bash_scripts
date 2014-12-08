@@ -1,0 +1,136 @@
+Script started on Thu 23 May 2013 09:07:40 PM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw7 $[00m ./my_which ls
+/bin/ls
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw7 $[00m ./my_which ls[K[Kcat
+/bin/cat
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw7 $[00m ./my_which cat\[K[K[K[Ktee
+/usr/bin/tee
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw7 $[00m ./my_which tee[K[K[Knon_existant
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw7 $[00m ./dircheck ~
+------------------------------------------------
+There are 117 directories under /home/zacharysells
+There are 0 file(s) in /home/zacharysells
+There are 1 file(s) that have zero length in /home/zacharysells
+Storage space used by /home/zacharysells: 762M total
+------------------------------------------------
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw7 $[00m ./dircheck ~ /bin
+------------------------------------------------
+There are 117 directories under /home/zacharysells
+There are 0 file(s) in /home/zacharysells
+There are 1 file(s) that have zero length in /home/zacharysells
+Storage space used by /home/zacharysells: 762M total
+------------------------------------------------
+------------------------------------------------
+There are 0 directories under /bin
+There are 152 file(s) in /bin
+There are 0 file(s) that have zero length in /bin
+Storage space used by /bin: 8.5M total
+------------------------------------------------
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw7 $[00m ./my+[K+[K+[K_find ![K~ -name *.cpp  
+-print
+/home/zacharysells/Documents/CS100/hw6/Array.cpp
+/home/zacharysells/Documents/CS100/hw6/main.cpp
+/home/zacharysells/Documents/CS100/hw6/Matrix.cpp
+/home/zacharysells/Documents/CS111/Homework2/main.cpp
+/home/zacharysells/Documents/CS111/Homework2/main.cpp
+/home/zacharysells/Documents/CS14/Assignment1/main.cpp
+/home/zacharysells/Documents/CS14/Assignment1/MyList.cpp
+/home/zacharysells/Documents/CS14/Assignment1/node.cpp
+/home/zacharysells/Documents/CS14/Assignment3/lab5/main.cpp
+/home/zacharysells/Documents/CS14/Assignment4/main.cpp
+/home/zacharysells/Documents/CS14/Assignment4/main.cpp
+/home/zacharysells/Documents/CS14/Assignment5/main.cpp
+/home/zacharysells/Documents/CS14/Assignment5/main.cpp
+/home/zacharysells/Documents/CS14/Assignment6/graph.cpp
+/home/zacharysells/Documents/CS14/Assignment6/main.cpp
+/home/zacharysells/Documents/CS14/Assignment6/main.cpp
+/home/zacharysells/Documents/CS14/lab3/BST.cpp
+/home/zacharysells/Documents/CS14/lab3/main.cpp
+/home/zacharysells/Documents/CS14/lab4/lab4/main.cpp
+/home/zacharysells/Documents/CS14/lab4/lab4/stack.cpp
+/home/zacharysells/Documents/CS14/lab6/Foo.cpp
+/home/zacharysells/Documents/CS14/lab6/hashmap.cpp
+/home/zacharysells/Documents/CS14/lab6/main.cpp
+/home/zacharysells/Documents/CS14/lab6/main.cpp
+/home/zacharysells/Documents/CS14/lab7/Lab7/graph.cpp
+/home/zacharysells/Documents/CS14/lab7/Lab7/main.cpp
+/home/zacharysells/Documents/CS14/lab7/Lab7/main.cpp
+/home/zacharysells/Documents/CS14/lab7/Lab7/main.cpp
+/home/zacharysells/Documents/CS14/lab7/Lab7/main.cpp
+/home/zacharysells/Documents/Scripts/TagMusic(Directory)/format_mp3_artist.cpp
+/home/zacharysells/Documents/Scripts/TagMusic(Directory)/format_mp3_title.cpp
+/home/zacharysells/Dropbox/Documents/CS111/Homework2/main.cpp
+/home/zacharysells/Dropbox/Documents/CS111/Homework2/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment1/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment1/MyList.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment1/node.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment3/lab5/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment4/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment4/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment5/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment5/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment6/graph.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment6/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment6/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab3/BST.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab3/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab4/lab4/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab4/lab4/stack.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab6/Foo.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab6/hashmap.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab6/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab6/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab7/Lab7/graph.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab7/Lab7/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab7/Lab7/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab7/Lab7/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab7/Lab7/main.cpp
+/home/zacharysells/Dropbox/Documents/Scripts/TagMusic(Directory)/format_mp3_artist.cpp
+/home/zacharysells/Dropbox/Documents/Scripts/TagMusic(Directory)/format_mp3_title.cpp
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw7 $[00m ./my_find ~ -name *.cpp -
+-print[C[C[K[K[K[K[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[Kmain.c 
+pp -type -f[K[Kf -exec ls {}
+/home/zacharysells/Documents/CS100/hw6/main.cpp
+/home/zacharysells/Documents/CS111/Homework2/main.cpp
+/home/zacharysells/Documents/CS111/Homework2/main.cpp
+/home/zacharysells/Documents/CS14/Assignment1/main.cpp
+/home/zacharysells/Documents/CS14/Assignment3/lab5/main.cpp
+/home/zacharysells/Documents/CS14/Assignment4/main.cpp
+/home/zacharysells/Documents/CS14/Assignment4/main.cpp
+/home/zacharysells/Documents/CS14/Assignment5/main.cpp
+/home/zacharysells/Documents/CS14/Assignment5/main.cpp
+/home/zacharysells/Documents/CS14/Assignment6/main.cpp
+/home/zacharysells/Documents/CS14/Assignment6/main.cpp
+/home/zacharysells/Documents/CS14/lab3/main.cpp
+/home/zacharysells/Documents/CS14/lab4/lab4/main.cpp
+/home/zacharysells/Documents/CS14/lab6/main.cpp
+/home/zacharysells/Documents/CS14/lab6/main.cpp
+/home/zacharysells/Documents/CS14/lab7/Lab7/main.cpp
+/home/zacharysells/Documents/CS14/lab7/Lab7/main.cpp
+/home/zacharysells/Documents/CS14/lab7/Lab7/main.cpp
+/home/zacharysells/Documents/CS14/lab7/Lab7/main.cpp
+/home/zacharysells/Dropbox/Documents/CS111/Homework2/main.cpp
+/home/zacharysells/Dropbox/Documents/CS111/Homework2/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment1/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment3/lab5/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment4/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment4/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment5/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment5/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment6/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/Assignment6/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab3/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab4/lab4/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab6/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab6/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab7/Lab7/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab7/Lab7/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab7/Lab7/main.cpp
+/home/zacharysells/Dropbox/Documents/CS14/lab7/Lab7/main.cpp
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw7 $[00m exit
+exit
+
+Script done on Thu 23 May 2013 09:22:35 PM PDT

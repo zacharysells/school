@@ -1,0 +1,2 @@
+vhdl work "../../lab4/alu_datapath/cpu_constant_library.vhd"
+vhdl work "../cpu_components.vhd"

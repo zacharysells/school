@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/zacharysells/Documents/cs161L/lab5/mips_datapath/mips_datapath_tb_isim_beh.exe" -prj "/home/zacharysells/Documents/cs161L/lab5/mips_datapath/mips_datapath_tb_beh.prj" "work.mips_datapath_tb" 

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for file in testdir*; do
+
+	echo "Testing " $file "/words..."
+	echo "Difference between files: "
+	echo
+	diff "/usr/share/dict/words" $file/words
+	
+done

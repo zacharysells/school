@@ -1,0 +1,101 @@
+Script started on Wed 08 May 2013 11:25:55 PM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw5 $[00m make polymorphism 
+g++ -c main.cc
+g++ -c hangman.cc
+g++ -c mathGame.cc
+g++ -c guessingGame.cc
+g++ -ggdb main.o hangman.o mathGame.o guessingGame.o -o polymorphism
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw5 $[00m ./polymorphism 
+----------------------------------------------------------
+----------------------------------------------------------
+Welcome to my game library! Choose from one of the following games: 
+----------------------------------------------------------
+----------------------------------------------------------
+1.)Guessing Game, Rating: 6
+2.)Hangman, Rating: 7
+3.)Math Game, Rating: 10
+Your selection('-1' to quit)1
+Playing the guessing game! Your goal is to guess the number 
+that is between 1 and 100 in 7 guesses...GO!
+Guesses left: 7
+Guess? 50
+Too big
+--------------------
+Guesses left: 6
+Guess? 25
+You got it! And people said you'd never accomplish anything...
+----------------------------------------------------------
+----------------------------------------------------------
+Welcome to my game library! Choose from one of the following games: 
+----------------------------------------------------------
+----------------------------------------------------------
+1.)Guessing Game, Rating: 6
+2.)Hangman, Rating: 7
+3.)Math Game, Rating: 10
+Your selection('-1' to quit)2
+Let's play hangman! You'll have 7 tries to guess the word...GO!
+----------------------------------------------------------------
+
+Your word: ----
+Take a guess! i
+Your word: ----
+Take a guess! a
+Your word: -a--
+Take a guess! b
+Your word: -a--
+Take a guess! l
+Your word: -a--
+Take a guess! d
+Your word: -a--
+Take a guess! h
+Your word: -a-h
+Take a guess! s
+Your word: -a-h
+Out of guesses! Don't worry I wasn't expecting you to guess it anyways...
+The word was: math
+----------------------------------------------------------
+----------------------------------------------------------
+Welcome to my game library! Choose from one of the following games: 
+----------------------------------------------------------
+----------------------------------------------------------
+1.)Guessing Game, Rating: 6
+2.)Hangman, Rating: 7
+3.)Math Game, Rating: 10
+Your selection('-1' to quit)3
+---------------------------------------------------------
+This is a timed math game! See how many you can get right
+You'll only have a few seconds for each questions.
+Oh, and they'll get progressively harder :) 
+GO!!!
+---------------------------------------------------------
+5 + 17 = 22
+CORRECT! +1 point
+9 + 31 = 40
+CORRECT! +1 point
+50 + 7 = 57
+CORRECT! +1 point
+36 + 87 = 123
+Close but no cigar! Your final score is: 3
+Good job, you did better than average!...almost
+----------------------------------------------------------
+----------------------------------------------------------
+Welcome to my game library! Choose from one of the following games: 
+----------------------------------------------------------
+----------------------------------------------------------
+1.)Guessing Game, Rating: 6
+2.)Hangman, Rating: 7
+3.)Math Game, Rating: 10
+Your selection('-1' to quit)
+----------------------------------------------------------
+----------------------------------------------------------
+Welcome to my game library! Choose from one of the following games: 
+----------------------------------------------------------
+----------------------------------------------------------
+1.)Guessing Game, Rating: 6
+2.)Hangman, Rating: 7
+3.)Math Game, Rating: 10
+Your selection('-1' to quit)-1
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw5 $[00m quit[K[K[K[Kd[Kexit
+exit
+
+Script done on Wed 08 May 2013 11:27:24 PM PDT

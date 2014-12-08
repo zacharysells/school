@@ -1,0 +1,156 @@
+------------------------------------------------------------------------------------
+---- Company: 
+---- Engineer: 
+---- 
+---- Create Date:    18:45:09 01/27/2014 
+---- Design Name: 
+---- Module Name:    decode - Behavioral 
+---- Project Name: 
+---- Target Devices: 
+---- Tool versions: 
+---- Description: 
+----
+---- Dependencies: 
+----
+---- Revision: 
+---- Revision 0.01 - File Created
+---- Additional Comments: 
+----
+------------------------------------------------------------------------------------
+--library IEEE;
+--use IEEE.STD_LOGIC_1164.ALL;
+--use IEEE.NUMERIC_STD.ALL;
+--use STD.textio.all;                     -- basic I/O
+--use IEEE.std_logic_textio.all;          -- I/O for logic types
+--
+---- Uncomment the following library declaration if using
+---- arithmetic functions with Signed or Unsigned values
+----use IEEE.NUMERIC_STD.ALL;
+--
+---- Uncomment the following library declaration if instantiating
+---- any Xilinx primitives in this code.
+----library UNISIM;
+----use UNISIM.VComponents.all;
+--
+--entity decode is
+--	Port( A : in std_logic_vector(31 downto 0);
+--			B : in std_logic_vector(31 downto 0);
+--			decoded_A : out std_logic_vector(31 downto 0);
+--			decoded_B : out std_logic_vector(31 downto 0));
+--end decode;
+--
+--architecture Behavioral of decode is
+--
+--
+--
+--
+--library IEEE;
+--use IEEE.STD_LOGIC_1164.ALL;
+--use IEEE.NUMERIC_STD.ALL;
+--use STD.textio.all;                     -- basic I/O
+--use IEEE.std_logic_textio.all;          -- I/O for logic types
+--
+--entity encode is
+--	Port( A : in std_logic_vector(31 downto 0);
+--			encoded_A : out std_logic_vector(35 downto 0));
+--			
+--	function decode(bcd_in : std_logic_vector(31 downto 0)) return std_logic_vector is
+--		variable temp0 : integer := 0;
+--		variable temp1 : integer := 0;
+--		variable temp2 : integer := 0;
+--		variable temp3 : integer := 0;
+--		variable temp4 : integer := 0;
+--		variable temp5 : integer := 0;
+--		variable temp6 : integer := 0;
+--		variable temp7 : integer := 0;
+--		signal tot : std_logic_vector(35 downto 0);
+--		begin
+--			temp0 := to_integer(unsigned(A(3 downto 0)));
+--			temp1 := to_integer(unsigned(A(7 downto 4)));
+--			temp2 := to_integer(unsigned(A(11 downto 8)));
+--			temp3 := to_integer(unsigned(A(15 downto 12)));
+--			temp4 := to_integer(unsigned(A(19 downto 16)));
+--			temp5 := to_integer(unsigned(A(23 downto 20)));
+--			temp6 := to_integer(unsigned(A(27 downto 24)));
+--			temp7 := to_integer(unsigned(A(31 downto 28)));
+--		
+--			tot <= std_logic_vector(to_unsigned(temp0*10**0, 35) + to_unsigned(temp1*10**1, 35) + to_unsigned(temp2*10**2,  35)
+--											+to_unsigned(temp3*10**3, 35) + to_unsigned(temp4*10**4, 35) + to_unsigned(temp5*10**5, 35)
+--											+to_unsigned(temp6*10**6, 35) + to_unsigned(temp7*10**7, 35));
+--			return tot;
+--
+--end decode;
+--			
+--			
+--	function encode(bin : std_logic_vector(35 downto 0)) return std_logic_vector is
+--			variable bcd : std_logic_vector(31 downto 0) := (others => '0');
+--			variable bint : std_logic_vector(35 downto 0) := bin;
+--			begin
+--		for i in 0 to 31 loop  -- repeating 8 times.
+--			bcd(31 downto 1) := bcd(30 downto 0);  --shifting the bits.
+--			bcd(0) := bint(31);
+--			bint(31 downto 1) := bint(30 downto 0);
+--			bint(0) :='0';
+--
+--			if(i < 31 and bcd(3 downto 0) > "0100") then --add 3 if BCD digit is greater than 4.
+--			bcd(3 downto 0) := std_logic_vector(unsigned(bcd(3 downto 0)) + "0011");
+--			end if;
+--				
+--			if(i < 31 and bcd(7 downto 4) > "0100") then --add 3 if BCD digit is greater than 4.
+--			bcd(7 downto 4) := std_logic_vector(unsigned(bcd(7 downto 4)) + "0011");
+--			end if;
+--			
+--			if(i < 31 and bcd(11 downto 8) > "0100") then  --add 3 if BCD digit is greater than 4.
+--			bcd(11 downto 8) := std_logic_vector(unsigned(bcd(11 downto 8)) + "0011");
+--			end if;
+--				
+--			if(i < 31 and bcd(15 downto 12) > "0100") then --add 3 if BCD digit is greater than 4.
+--			bcd(15 downto 12) := std_logic_vector(unsigned(bcd(15 downto 12)) + "0011");
+--			end if;
+--
+--			if(i < 31 and bcd(19 downto 16) > "0100") then --add 3 if BCD digit is greater than 4.
+--			bcd(19 downto 16) := std_logic_vector(unsigned(bcd(19 downto 16)) + "0011");
+--			end if;
+--
+--			if(i < 31 and bcd(23 downto 20) > "0100") then  --add 3 if BCD digit is greater than 4.
+--			bcd(23 downto 20) := std_logic_vector(unsigned(bcd(23 downto 20)) + "0011");
+--			end if;
+--				
+--			if(i < 31 and bcd(27 downto 24) > "0100") then --add 3 if BCD digit is greater than 4.
+--			bcd(27 downto 24) := std_logic_vector(unsigned(bcd(27 downto 24)) + "0011");
+--			end if;
+--
+--			if(i < 31 and bcd(31 downto 28) > "0100") then --add 3 if BCD digit is greater than 4.
+--			bcd(31 downto 28) := std_logic_vector(unsigned(bcd(31 downto 28)) + "0011");
+--			end if;
+--				
+--		end loop;
+--	return bcd;			
+--end encode;
+--
+--
+--architecture Behavioral of encode is
+--signal tot : std_logic_vector(35 downto 0);
+--begin
+--	process(A, tot)
+--
+--		variable my_line : line;
+--		begin
+--		
+--			tot <= bin_to_bcd(A);
+--			encoded_A <= tot;
+--			write(my_line, "encoded_A ");
+--			write(my_line, tot);
+--			writeline(output, my_line);
+--
+--			
+--	
+--	end process;
+--
+--
+--end Behavioral;
+--
+--
+--
+--
+--

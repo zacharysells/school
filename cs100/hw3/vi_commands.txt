@@ -1,0 +1,35 @@
+//Part 1.) Convert sentence//
+1.) <esc>
+2.) /in<enter>
+3.) dw
+4.) i
+5.) an idiot
+6.) <esc>
+7.) ma
+8.) 0
+9.) i
+10.) IF<space>
+11.) <esc>
+12.) `a
+13.) e
+14.) l
+15.) i
+16.) <space>savant
+17.) <esc>
+18.) ?F<enter>
+19.) rf
+20.) 0
+21.) i<enter>
+22.) <esc>
+23.) :wq
+24.) vi.txt<enter>
+
+//Part 2.) Insert macro//
+:map! \fo ifor(<esc>mai<right-arrow>;;)
+{
+<tab>
+}<esc>`ai<right-arrow>
+
+
+//Part 3.) Command macro//
+:map !S <esc>:set tabstop=4

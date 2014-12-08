@@ -1,0 +1,18 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<%= form_for :database, url: database_path do |f| %>
+  <p>
+    <%= f.label :city %><br>
+    <%= f.text_field :City %>
+  </p>
+ 
+  <p>
+    <%= f.label :state %><br>
+    <%= f.text_area :State %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

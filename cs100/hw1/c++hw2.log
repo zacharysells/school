@@ -1,0 +1,23 @@
+Script started on Tue 09 Apr 2013 08:57:00 PM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw1 $[00m echo[K[K[K[Kmore stack_words.txt 
+zachary sells
+hello goodbye
+practice
+example
+racecar
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw1 $[00m g++ stack.cc
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw1 $[00m ./a.out < stack-[K_words.txtt 
+--------------------------------------------------------
+To invoke testing subroutine, enter 'quit' and then
+enter 'hello' as a test word. To quit program, enter ^d
+--------------------------------------------------------
+Enter word: slles yrahcaz
+Enter word: eybdoog olleh
+Enter word: ecitcarp
+Enter word: elpmaxe
+Enter word: racecar
+Enter word: 
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw1 $[00m exit
+exit
+
+Script done on Tue 09 Apr 2013 08:57:38 PM PDT

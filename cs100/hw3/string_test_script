@@ -1,0 +1,54 @@
+Script started on Wed 24 Apr 2013 07:00:20 PM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw3 $[00m make tet[KstString
+g++ -c testString.cc
+g++ -c String.cc
+g++ testString.o String.o -o testString
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw3 $[00m ./testString 
+Testing constructors...
+Strings s, s2, s3, s4 have been constructed
+
+s3 = _Zachary
+Setting s4 = s3
+s4 = _Zachary
+
+Editing s3...
+s = Hello World!
+s2 = _My name is
+s3 = _Zackari
+s4 = _Zachary
+
+Size of s3: 8
+Size of s2: 11
+
+Reverse of s3 is: irakcaZ_
+
+Index of char 'Z' on s3: 1
+Index of char 'i' on s3: 7
+Index of char 'l' on s3: -1
+
+Index of pattern, 'World', in s: 6
+
+Is s3 != s4? Yes
+Setting s3 = s4
+Is s3 == s4? Yes
+
+Is s2 > s? Yes
+
+Is s3 >= s4? 
+Yes
+
+Concatenating s2 to s...
+s + s2 = Hello World!_My name is
+
+Concatenating s3 to s2 using += operator...
+(s + s2) + s3 = _My name is_Zachary
+
+Enter a single-word string and I will tell you it's size
+testMySize! 
+Size: 10
+
+This concludes testing...
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw3 $[00m exit
+exit
+
+Script done on Wed 24 Apr 2013 07:00:59 PM PDT

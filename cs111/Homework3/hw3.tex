@@ -1,0 +1,137 @@
+\documentclass{article}
+
+\usepackage{fullpage,latexsym,picinpar,amsmath,amsfonts,graphicx}
+
+\input{macros.tex}
+
+\begin{document}
+
+% v -- YOUR NAME and SID in the braces
+\student{Zachary \c Sells}{861013217}
+% v -- YOUR NAME and SID in the braces
+% v -- ASSIGNMENT NUMBER in the braces
+\assignment{3} 
+% v-- DUE DATE in the braces
+\duedate{Friday, February 22} 
+
+\centerline{\large \bf CS/MATH111 ASSIGNMENT 3}
+\centerline{due Thursday, February 21 (8AM)}
+
+\vskip 0.2in
+\noindent{\bf Individual assignment:} Problems 1 and 2.
+
+\noindent{\bf Group assignment:} Problems 1,2 and 3.
+
+\vskip 0.1in
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}
+Let $W_n$ be the number of strings of
+length $n$ formed from letters $A$, $B$, $C$, 
+that do not contain $AB$ or $CC$.
+For example, for $n=3$, all the strings with this
+property are:
+%
+\begin{align*}
+	AAA, AAC, ACA, ACB, BAA, BAC, BBA, BBB, 
+	\\
+	 BBC, BCA, BCB, CAA, CAC, CBA, CBB, CBC,
+\end{align*}
+%
+and thus $W_3 = 16$. (Note that $W_0 = 1$, because the
+empty string satisfies the condition.)
+
+\noindent (a) Derive a recurrence relation for
+        the numbers $W_n$. Justify it.
+
+\noindent (b) Find the formula for the numbers $W_n$
+                by solving this recurrence.
+                Show your work.
+\end{problem}
+
+\textbf{Problem 1 Solution}
+\\*
+Using the fact that $W_0 = 1, W_1 = 4,$ and $W_2 = 13$ We try to find a formula using these knowns that both agrees with the initial conditions, and gives us the correct number for any given n.
+\\*\\*
+The number of words that satisfy the conditions is the cardinality of the set{A,B,C} times the value of $W_(n-1)$ plus the value of $W_(n-2)$ giving us a final recurrence equation of $W_n = 3W_(n-1) + W_(n-2)$. We can verify this equation by plugging in $n = 3$. Using counting techniques, we find that the number of words that meet the conditions is 43. And if find this value by using or recurrence equation, we get: $W_4 = 3*(13) + 4$ which also equals 43. 
+\\*\\*
+Now we must solve this recurrence relation. 
+\\*
+The characteristic equation of this relation is given by: $x^2 - 3x -1$
+\\*
+Solving this gives us roots of: $r_1 = \frac{3+\sqrt{13}}{2}$ and $r_2 = \frac{3-\sqrt{13}}{2}$
+\\*
+Giving us the general equation of: $W_n = \alpha_1 * (\frac{3+\sqrt{13}}{2})^n + \alpha_2 * (\frac{3-\sqrt{13}}{2})^n$
+\\*
+Plugging in the initial conditions... $\alpha_1 = \frac{1}{2} + \frac{5}{2*\sqrt{13}}$ and $\alpha_2 = \frac{\sqrt{13}-5}{2*\sqrt{13}}$
+\\*\\*
+Our final solution is... $W_n = (\frac{1}{2} + \frac{5}{2*\sqrt{13}}) * (\frac{3+\sqrt{13}}{2})^n + (\frac{\sqrt{13}-5}{2*\sqrt{13}}) * (\frac{3-\sqrt{13}}{2})^n$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}
+Solve the following recurrence equation:
+%
+\begin{eqnarray*}
+        f_n &=& 3f_{n-1} + 15f_{n-2} + 2n+3\\
+        f_0 &=& 0 \\
+        f_1 &=& 1
+\end{eqnarray*}
+%
+Show your work, step by step: the associated homogeneous equation,
+the characteristic polynomial and its
+roots, the general solution of the homogeneous
+equation, computing a particular solution,
+the general solution of the non-homogeneous equation,
+using the initial conditions to compute the final solution.
+\end{problem}
+
+\textbf{Problem 2 Solution}
+To solve this recurrence we will break it up into two separate components(Homogeneous and Non-homogeneous), then add them together to get the final solution.
+\\*
+$f(n) = 3*f(n-1) + 15*f(n-2)$ is the homogeneous part of the equation, which we will find the characteristic equation of.
+\\*
+The characteristic equation is $x^2 - 3x - 15$.
+\\*
+Solving this gives roots of: $\frac{3+\sqrt{69}}{2}$ and $\frac{3-\sqrt{69}}{2}$
+\\*
+This gives us the general solution of $f(n) = \alpha_1*(\frac{3+\sqrt{69}}{2})^n + \alpha_2 * (\frac{3-\sqrt{69}}{2})^n$
+\\*\\*
+Now we will find the solution to the non-homogeneous part of the recurrence.
+\\*
+Lets guess the solution: $\beta_1 * n + \beta_2$
+\\*
+Plugging back into the original recurrence and simplifying gives the two equations: $33*\beta_1 - 17*\beta_2 - 3 = 0$ and $-17\beta_1 - 2 = 0$
+\\*
+Solving for $\beta_1$ and $\beta_2$ gives $\frac{-2}{17}$ and $\frac{-117}{289}$, respectively.
+\\*
+Adding this solution to the homogeneous solution gives: $f(n) = \alpha_1*(\frac{3+\sqrt{69}}{2})^n + \alpha_2 * (\frac{3-\sqrt{69}}{2})^n - \frac{2}{17} * n - \frac{117}{289}$
+\\*
+Now we must solve for the two alphas using the initial conditions
+\\*
+This gives $\alpha_1 = \frac{529+117*\sqrt{69}}{578*\sqrt{69}}$ and $\alpha_2 = \frac{351 - 23* \sqrt{69}}{1734}$
+\\*\\*
+Making our final solution: $f(n) = (\frac{529+117*\sqrt{69}}{578*\sqrt{69}}) *(\frac{3+\sqrt{69}}{2})^n + (\frac{351 - 23* \sqrt{69}}{1734}) * (\frac{3-\sqrt{69}}{2})^n - \frac{2}{17} * n - \frac{117}{289}$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}
+Solve the following recurrence equation:
+%
+\begin{eqnarray*}
+        t_n &=& 3t_{n-1} + 2t_{n-2}\\
+        t_0 &=& 0 \\
+        t_1 &=& 2
+\end{eqnarray*}
+%
+Show your work.
+\end{problem}
+
+\vskip 0.1in
+\paragraph{Submission.}
+To submit the homework, you need to upload the pdf file into ilearn by 8AM on Thursday, February 21,
+and turn-in a paper copy in class (or slip it under my door, no later than 10AM).
+
+\end{document}
+

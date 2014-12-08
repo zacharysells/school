@@ -1,0 +1,45 @@
+#!/bin/bash
+
+SUBDIRS=0
+SUBFILES=0
+ZERO_LENGTH=0
+
+function count_subdirs()
+{
+	for files in $1/*; do
+	
+		if [[ -d $files ]]; then
+			SUBDIRS=`expr $SUBDIRS + 1`
+			count_subdirs $files
+		fi
+	done
+}
+
+for dir in $@; do
+	
+	for files in $dir/*; do
+	
+		if [[ -f $files ]]; then
+			SUBFILES=`expr $SUBFILES + 1`
+		fi
+		
+		if [[ -d $files ]]; then
+			SUBDIRS=`expr $SUBDIRS + 1`
+			count_subdirs $files
+		fi
+		
+	done
+	
+	echo "------------------------------------------------"
+	echo "There are "$SUBDIRS" directories under "$dir
+	echo "There are "$SUBFILES" file(s) in "$dir
+	echo "There are `find $dir -maxdepth 1 -size 0 | wc -l` file(s) that have zero length in "$dir
+	echo "Storage space used by "$dir": "`du -hc $dir | tail -n 1`
+	echo "------------------------------------------------"
+	SUBDIRS=0
+	SUBFILES=0
+	ZERO_LENGTH=0
+	
+done
+
+

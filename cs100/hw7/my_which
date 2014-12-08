@@ -1,0 +1,12 @@
+#!/bin/bash
+
+array=(`echo $PATH | tr ':' ' '`);
+
+for path in "${array[@]}"; do
+	
+	if [[ -e $path/$1 ]]; then
+		echo $path/$1
+	fi
+	
+done
+

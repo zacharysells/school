@@ -1,0 +1,28 @@
+Script started on Wed 15 May 2013 10:48:32 PM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw6 $[00m make matrix_main 
+g++ -c -ggdb main.cpp
+g++ -ggdb main.o -o matrix_main
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw6 $[00m ./matrix_main 
+    0    0    0    0    0
+    0    1    2    3    4
+    0    2    4    6    8
+    0    3    6    9   12
+    0    4    8   12   16
+    0    5   10   15   20
+    0    6   12   18   24
+    0    7   14   21   28
+    0    8   16   24   32
+    0    9   18   27   36
+
+    0    0    0    0    0    0    0    0    0    0
+    0    1    2    3    4    5    6    7    8    9
+    0    2    4    6    8   10   12   14   16   18
+    0    3    6    9   12   15   18   21   24   27
+    0    4    8   12   16   20   24   28   32   36
+    0    5   10   15   20   25   30   35   40   45
+    0    6   12   18   24   30   36   42   48   54
+    0    7   14   21   28   35   42   49   56   63
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/CS100/hw6 $[00m exit
+exit
+
+Script done on Wed 15 May 2013 10:48:47 PM PDT

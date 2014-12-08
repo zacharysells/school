@@ -1,0 +1,217 @@
+Script started on Wed 17 Apr 2013 10:55:09 PM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m make main[K[K[K[KCoins_main[K[K[Kain
+g++ -c Coins.cc
+g++ -c main.cc
+g++ Coins.o main.o -o Coins_main
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m ls
+bestMain.cc    Coins.cc  [0m[01;32mCoins_main[0m  main1script  main.o    my_ls.cc
+betterMain.cc  Coins.h   Coins.o     main.cc      Makefile
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m Coins[K[K[K[K[K./Coins_main 
+I started with 
+-----------------------------------
+Quarters(25c): 100
+Dimes(10c):    10
+Nickels(5c):   10
+Pennies(1c):   100
+-----------------------------------
+Total: $27.50 dollars
+-----------------------------------
+ in my pocket
+I bought a candy bar for 482 cents using 
+-----------------------------------
+Quarters(25c): 81
+Dimes(10c):    10
+Nickels(5c):   9
+Pennies(1c):   98
+-----------------------------------
+Total: $22.68 dollars
+-----------------------------------
+
+I have 
+-----------------------------------
+Quarters(25c): 100
+Dimes(10c):    10
+Nickels(5c):   10
+Pennies(1c):   100
+-----------------------------------
+Total: $27.50 dollars
+-----------------------------------
+ left in my pocket
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m make Coins_better
+g++ -c betterMain.cc
+g++ Coins.o betterMain.o -o Coins_better
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m ls
+bestMain.cc    [0m[01;32mCoins_better[0m  [01;32mCoins_main[0m   main.cc   my_ls.cc
+betterMain.cc  Coins.cc      Coins.o      main.o
+betterMain.o   Coins.h       main1script  Makefile
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m ./Coins_bewtt[K[K[Ktter
+My pocket
+-----------------------------------
+Quarters(25c): 5
+Dimes(10c):    3
+Nickels(5c):   6
+Pennies(1c):   8
+-----------------------------------
+Total: $1.93 dollars
+-----------------------------------
+
+My piggy bank
+-----------------------------------
+Quarters(25c): 50
+Dimes(10c):    50
+Nickels(5c):   50
+Pennies(1c):   50
+-----------------------------------
+Total: $20.50 dollars
+-----------------------------------
+
+This is what's left after buying a candy bar for 68cents. 
+
+-----------------------------------
+Quarters(25c): 3
+Dimes(10c):    2
+Nickels(5c):   5
+Pennies(1c):   5
+-----------------------------------
+Total: $1.25 dollars
+-----------------------------------
+Taking 30 quarters, 25 dimes, 13 nickels, and 22 pennies from piggy bank moving it to pocket.
+My pocket
+-----------------------------------
+Quarters(25c): 33
+Dimes(10c):    27
+Nickels(5c):   18
+Pennies(1c):   27
+-----------------------------------
+Total: $12.12 dollars
+-----------------------------------
+
+My piggy bank
+-----------------------------------
+Quarters(25c): 20
+Dimes(10c):    25
+Nickels(5c):   37
+Pennies(1c):   28
+-----------------------------------
+Total: $9.63 dollars
+-----------------------------------
+
+Found 5 nickels and 7 pennies while vaccuming. Putting them in my piggy bank.
+
+-----------------------------------
+Quarters(25c): 20
+Dimes(10c):    25
+Nickels(5c):   42
+Pennies(1c):   35
+-----------------------------------
+Total: $9.95 dollars
+-----------------------------------
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m make Coins_best
+g++ -c bestMain.cc
+g++ Coins.o bestMain.o -o Coins_best
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m ./Coins_best 
+[H[2J0Welcome to your Coin purse!(it's a satchel!)
+Enter 'd' to deposit coins.
+Enter 'e' to withdraw or extract coins.
+Enter 'p' to print your coins and balance.
+Enter 'q' to exit the program
+
+~p
+[H[2J
+-----------------------------------
+Quarters(25c): 0
+Dimes(10c):    0
+Nickels(5c):   0
+Pennies(1c):   0
+-----------------------------------
+Total: $0.00 dollars
+-----------------------------------
+Welcome to your Coin purse!(it's a satchel!)
+Enter 'd' to deposit coins.
+Enter 'e' to withdraw or extract coins.
+Enter 'p' to print your coins and balance.
+Enter 'q' to exit the program
+
+~d
+How many quarters? 13
+How many dimes? 11
+How many nickels? 5
+How many pennies? 22
+
+Welcome to your Coin purse!(it's a satchel!)
+Enter 'd' to deposit coins.
+Enter 'e' to withdraw or extract coins.
+Enter 'p' to print your coins and balance.
+Enter 'q' to exit the program
+
+~p
+[H[2J
+-----------------------------------
+Quarters(25c): 13
+Dimes(10c):    11
+Nickels(5c):   5
+Pennies(1c):   22
+-----------------------------------
+Total: $4.82 dollars
+-----------------------------------
+Welcome to your Coin purse!(it's a satchel!)
+Enter 'd' to deposit coins.
+Enter 'e' to withdraw or extract coins.
+Enter 'p' to print your coins and balance.
+Enter 'q' to exit the program
+
+~e
+[H[2JHow much would you like to withdraw(in cents)? 15
+Welcome to your Coin purse!(it's a satchel!)
+Enter 'd' to deposit coins.
+Enter 'e' to withdraw or extract coins.
+Enter 'p' to print your coins and balance.
+Enter 'q' to exit the program
+
+~p
+[H[2J
+-----------------------------------
+Quarters(25c): 13
+Dimes(10c):    10
+Nickels(5c):   4
+Pennies(1c):   22
+-----------------------------------
+Total: $4.67 dollars
+-----------------------------------
+Welcome to your Coin purse!(it's a satchel!)
+Enter 'd' to deposit coins.
+Enter 'e' to withdraw or extract coins.
+Enter 'p' to print your coins and balance.
+Enter 'q' to exit the program
+
+~e
+[H[2JHow much would you like to withdraw(in cents)? 500
+Not enough coins or not exact change
+
+Welcome to your Coin purse!(it's a satchel!)
+Enter 'd' to deposit coins.
+Enter 'e' to withdraw or extract coins.
+Enter 'p' to print your coins and balance.
+Enter 'q' to exit the program
+
+~p
+[H[2J
+-----------------------------------
+Quarters(25c): 13
+Dimes(10c):    10
+Nickels(5c):   4
+Pennies(1c):   22
+-----------------------------------
+Total: $4.67 dollars
+-----------------------------------
+Welcome to your Coin purse!(it's a satchel!)
+Enter 'd' to deposit coins.
+Enter 'e' to withdraw or extract coins.
+Enter 'p' to print your coins and balance.
+Enter 'q' to exit the program
+
+~q
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw2 $[00m exit
+exit
+
+Script done on Wed 17 Apr 2013 10:57:07 PM PDT

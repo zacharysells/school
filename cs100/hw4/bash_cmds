@@ -1,0 +1,11 @@
+#1.) grep [0-9] *.cpp
+
+#2.) grep "cout" *.h *.cpp
+
+#3.) grep . foo.cpp > foo1.cpp; rm foo.cpp; mv foo1.cpp foo.cpp
+
+#4.) find /home \( -name "*.o" -o -name "*.out" \) -and -not -path ~/.trash -exec mv {} ~/.trash \;
+
+#5.) find / -type d -and -name "bin" -exec ls {} \;
+
+#6.) find /home -type f -and -size +20b -print

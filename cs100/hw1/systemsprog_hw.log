@@ -1,0 +1,76 @@
+Script started on Tue 09 Apr 2013 09:24:49 PM PDT
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw1 $[00m g++ rolodex.cc
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw1 $[00m ./a.out
+[H[2JWelcome to Rolodex!, press 'i' to start entering
+contacts. To load an already saved rolodex, press 'l'
+Command: i
+[H[2JEnter a name for new contact(last then first): Sells Zachary
+Enter an address for the new contact: 555 Test Adr dress, Ca A<   Riverside CA 918011 
+Enter a phone number for the new contact: 929  19 555       (919) 555 - = 3740^[[D^[[D        
+Command: p
+[H[2JName: Sells Zachary 
+Address: 555 Test Address, Riverside CA 91801 
+Phone Number: (919) 555 - 3740 
+----------------------------------------------
+Command: ii 
+[H[2JEnter a name for new contact(last then first): Test Contact
+Enter an address for the new contact: test contact  's address
+Enter a phone number for the new contact: test phone number
+Command: p
+[H[2JName: Sells Zachary 
+Address: 555 Test Address, Riverside CA 91801 
+Phone Number: (919) 555 - 3740 
+----------------------------------------------
+Name: Test Contact 
+Address: test contact's address 
+Phone Number: test phone number 
+----------------------------------------------
+Command: f
+[H[2JEnter last name of contact: Sells
+Name: Sells Zachary 
+Address: 555 Test Address, Riverside CA 91801 
+Phone Number: (919) 555 - 3740 
+----------------------------------------------
+Command: ' d
+[H[2JEnter last name of contact to delete: Sells
+Name: Sells Zachary 
+Address: 555 Test Address, Riverside CA 91801 
+Phone Number: (919) 555 - 3740 
+----------------------------------------------
+Contact deleted.
+Command: p
+[H[2JName: Test Contact 
+Address: test contact's address 
+Phone Number: test phone number 
+----------------------------------------------
+Command: s
+Enter a name for the rolodex: myrolodex
+Command: q
+Exiting Rolodex. Saved rolodex as 'myrolodex'...
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw1 $[00m ls
+[0m[01;32ma.out[0m       c++hw2.log  rolodex.cc  stack.h          systemsprog_hw.log
+c++hw1.log  myrolodex   stack.cc    stack_words.txt
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw1 $[00m ./a.out
+[H[2JWelcome to Rolodex!, press 'i' to start entering
+contacts. To load an already saved rolodex, press 'l'
+Command: p
+[H[2JCommand: i l
+Save current rolodex(y or n)? n
+Enter rolodex to load: myrolodex
+Rolodex loaded.
+Command: p
+[H[2JName: Test Contact 
+Address: test contact's address 
+Phone Number: test phone number 
+----------------------------------------------
+Command: qq 
+Enter a name for the rolodex: myrolodex
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw1 $[00m ls
+[0m[01;32ma.out[0m       c++hw2.log  rolodex.cc  stack.h          systemsprog_hw.log
+c++hw1.log  myrolodex   stack.cc    stack_words.txt
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw1 $[00m more myrolodex 
+Test Contact | test contact's address | test phone number ;
+[01;32mzacharysells@zacharysells-NV53A[01;34m ~/Documents/cs100/hw1 $[00m ei[Kxit
+exit
+
+Script done on Tue 09 Apr 2013 09:27:57 PM PDT
