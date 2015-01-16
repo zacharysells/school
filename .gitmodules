@@ -1,0 +1,3 @@
+[submodule "cs152/CS152Project"]
+	path = cs152/CS152Project
+	url = https://github.com/cmartz/CS152Project.git

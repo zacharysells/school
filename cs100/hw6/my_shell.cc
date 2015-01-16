@@ -2,6 +2,7 @@
 #include <vector>
 #include <unistd.h>
 #include <fcntl.h>
+#include <signal.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
@@ -33,7 +34,7 @@ string full_path(const string &cmd)
 				cmd_path.push_back(path[e]);
 			}
 			++e;
-			
+
 			if(stat((cmd_path + "/" + cmd).c_str(), &buffer) == 0)
 				return cmd_path + "/" + cmd;
 			cmd_path.clear();
@@ -88,15 +89,15 @@ int exec_cmd(const string &command);
 void handle_pipe(const string &cmd, const string &cmdPostPipe, vector<string> argv)
 {
 	int pipeArray[2];
-	
+
 	if(pipe(pipeArray) == -1)
 	{
 		cerr << "ERROR: Pipe failed..exiting" <<endl;
 		exit(1);
-	}	
-	int pid = fork();	
+	}
+	int pid = fork();
 	switch(pid)
-	{	
+	{
 		case -1: cerr << "ERROR: Fork failed...exiting" << endl; break;
 
 		case 0:
@@ -107,7 +108,7 @@ void handle_pipe(const string &cmd, const string &cmdPostPipe, vector<string> ar
 			close(pipeArray[0]);
 			exec_cmd(cmdPostPipe);
 		}
-				
+
 		default:
 		{
 			//Parent
@@ -122,12 +123,12 @@ void handle_pipe(const string &cmd, const string &cmdPostPipe, vector<string> ar
 void handle_daemon()
 {
 	int pid = fork();
-			
+
 	switch(pid)
 	{
 		case -1: cout << "Fork failed...exiting"; exit(1);
-		
-		case 0: 
+
+		case 0:
 		{
 			if(setsid() < 0)
 			{
@@ -138,13 +139,13 @@ void handle_daemon()
 			close(STDERR_FILENO);
 			return;
 		}
-		
+
 		default: exit(0);
 	}
 }
 
 int exec_cmd(const string &command)
-{	
+{
 	if(command.at(command.length() - 1) == '&')	handle_daemon();
 	stringstream ss(command);
 	string cmd;
@@ -156,7 +157,7 @@ int exec_cmd(const string &command)
 		cout << "Error, no such executable found in PATH" << endl;
 		return -1;
 	}
-	
+
 	string temp;
 	while(ss >> temp)
 	{
@@ -165,18 +166,18 @@ int exec_cmd(const string &command)
 			ss >> temp;
 			open_infile(temp.c_str());
 		}
-		
+
 		else if(temp == ">")//Outfile is specified. Open it.
 		{
 			ss >> temp;
 			open_outfile(temp.c_str());
 		}
-		
+
 		else if(temp == "&")//Exec command in background
 		{
-			continue;	
+			continue;
 		}
-		
+
 		else if(temp == "|")//Pipe has been specified
 		{
 			string cmdPostPipe;
@@ -188,11 +189,11 @@ int exec_cmd(const string &command)
 			}
 			handle_pipe(cmd, cmdPostPipe, argv);
 		}
-		
+
 		else
 		{
 			argv.push_back(temp);
-		}	
+		}
 	}
 	execv(cmd.c_str(), (char**)vec_to_char(argv, cmd));
 }
@@ -201,19 +202,19 @@ int eval_cmd(const string &command)
 {
 	if(command == "quit") return 0;
 	if(command == "") return 0;
-	
+
 	int pid = fork();
 	switch(pid)
 	{
 		case -1: cout << "Fork failed...exiting"; return -1;
-		
+
 		case 0: exec_cmd(command);
-		
+
 		default: wait(NULL);
 	}
-	
+
 	return 0;
-	
+
 }
 
 int main(int argc, char * argv[])
