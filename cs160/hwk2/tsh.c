@@ -56,7 +56,6 @@ struct job_t jobs[MAXJOBS]; /* The job list */
 
 /* Here are the functions that you will implement */
 void eval(char *cmdline);
-void exec(char **argv);
 int builtin_cmd(char **argv);
 void do_bgfg(char **argv);
 void waitfg(pid_t pid);
@@ -78,6 +77,7 @@ pid_t fgpid(struct job_t *jobs);
 struct job_t *getjobpid(struct job_t *jobs, pid_t pid);
 struct job_t *getjobjid(struct job_t *jobs, int jid);
 int pid2jid(pid_t pid);
+int jid2pid(int jid);
 void listjobs(struct job_t *jobs);
 
 void usage(void);
@@ -178,6 +178,7 @@ int main(int argc, char **argv)
 void eval(char *cmdline)
 {
   int bg;
+  sigset_t mask;
   char* argv[MAXARGS] = {NULL};
 
   bg = parseline(cmdline, argv);
@@ -187,23 +188,20 @@ void eval(char *cmdline)
       return;
   }
 
-  exec(argv);
+  /* Block SIGCHILD */
+  sigemptyset(&mask);
+  sigaddset(&mask, SIGCHLD);
+  sigprocmask(SIG_BLOCK, &mask, NULL);
 
-  return;
-}
-
-void exec(char **argv)
-{
-  int status;
   int pid = fork();
   switch(pid)
   {
     case 0:
     {
       /* Child Process */
-      printf("In child process! Excecuting command...\n");
+      sigprocmask(SIG_UNBLOCK, &mask, NULL);
+      setpgid(0, 0); /* Put child into separate process group from foregorund. */
       execvp(argv[0], argv);
-      exit(0);
       break;
     }
     case -1:
@@ -214,9 +212,15 @@ void exec(char **argv)
     }
     default:
     {
-      printf("In parent process! Waiting for child pid %d\n", pid);
-      waitpid(pid, &status, WUNTRACED);
-      printf("In parent proccess! Child process has terminated\n");
+      /* Parent Process */
+      addjob(jobs, pid, (bg == 1 ? BG : FG), cmdline);
+      sigprocmask(SIG_UNBLOCK, &mask, NULL);
+
+      if(!bg)
+      {
+        /* Let child run in foreground if this is not a background job */
+        waitpid(pid, NULL, 0);
+      }
       break;
     }
   }
@@ -272,8 +276,10 @@ int parseline(const char *cmdline, char **argv)
     argv[argc] = NULL;
 
     if (argc == 0)  /* ignore blank line */
-	return 1;
-
+	  {
+      // TODO clear argv array
+      return 1;
+    }
     /* should the job run in the background? */
     if ((bg = (*argv[argc-1] == '&')) != 0) {
 	argv[--argc] = NULL;
@@ -287,26 +293,27 @@ int parseline(const char *cmdline, char **argv)
  */
 int builtin_cmd(char **argv)
 {
+
     char * cmd = argv[0];
     if(strcmp(cmd, "quit") == 0)
       exit(0);
 
     else if(strcmp(cmd, "jobs") == 0)
     {
-      // TODO
-      return 0;
+      listjobs(jobs);
+      return 1;
     }
 
     else if(strcmp(cmd, "fg") == 0)
     {
-      // TODO
-      return 0;
+      do_bgfg(argv);
+      return 1;
     }
 
     else if(strcmp(cmd, "bg") == 0)
     {
-      // TODO
-      return 0;
+      do_bgfg(argv);
+      return 1;
     }
 
     else
@@ -318,7 +325,38 @@ int builtin_cmd(char **argv)
  */
 void do_bgfg(char **argv)
 {
+
+  int argc = 0;
+  while(argv[++argc] != NULL);
+  if(argc != 2)
+  {
+    printf("Usage: fg <job>.\n");
     return;
+  }
+
+  int pid;
+  if(argv[1][0] == '%')
+  {
+    int jid = atoi(strstr(argv[1], "%") + 1);
+    pid = jid2pid(jid);
+  }
+  else
+  {
+    pid = atoi(argv[1]);
+  }
+
+  if(strcmp(argv[0], "fg") == 0)
+  {
+    // TODO Given PID, move job to foreground.
+    ;
+  }
+
+  else if(strcmp(argv[0], "bg") == 0)
+  {
+    // TODO Given PID, move job to background.
+    ;
+  }
+  return;
 }
 
 /*
@@ -342,6 +380,16 @@ void waitfg(pid_t pid)
  */
 void sigchld_handler(int sig)
 {
+    //printf("SIGCHLD signal received. Removing child job\n");
+    int pid;
+    while((pid = waitpid(-1, NULL, WNOHANG)) > 0)
+    {
+      deletejob(jobs, pid);
+    }
+    if(errno != ECHILD)
+    {
+      unix_error("ECHILD Error from waitpid");
+    }
     return;
 }
 
@@ -352,6 +400,11 @@ void sigchld_handler(int sig)
  */
 void sigint_handler(int sig)
 {
+    int pid = fgpid(jobs);
+    if(pid == 0)
+      return;
+
+    kill(pid, SIGINT);
     return;
 }
 
@@ -491,6 +544,23 @@ int pid2jid(pid_t pid)
             return jobs[i].jid;
         }
     return 0;
+}
+
+/* jid2pid - Map job ID to process ID */
+int jid2pid(int jid)
+{
+  int i;
+
+  if(jid < 1)
+    return 0;
+  for(i = 0; i < MAXJOBS; ++i)
+  {
+    if(jobs[i].jid == jid)
+    {
+      return jobs[i].pid;
+    }
+  }
+  return 0;
 }
 
 /* listjobs - Print the job list */
