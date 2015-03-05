@@ -1,0 +1,124 @@
+#!/bin/bash
+
+# Install httpd
+yum list installed httpd > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+  echo "httpd package is already installed...continuing"
+
+else
+  echo "installing httpd package..."
+  yes | sudo yum install httpd -y > /dev/null 2>&1
+  echo "httpd package installed"
+fi
+
+echo "configuring httpd"
+hostname=`hostname -s`
+sudo sed -i "/#ServerName www.example.com:80/a ServerName $hostname:80" /etc/httpd/conf/httpd.conf
+sudo sed -i 's/FollowSymLinks//g' /etc/httpd/conf/httpd.conf
+echo "httpd configured"
+
+echo "starting httpd"
+sudo service httpd start > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+  echo "httpd service started without error. stopping httpd service"
+  sudo service httpd stop > /dev/null 2>&1
+
+else
+  echo "httpd failed to start"
+  exit 5;
+
+fi
+
+
+# Install php
+yum list installed php > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+  echo "php package is already installed...continuing"
+  if [ -f /etc/httpd/conf.d/php.conf ]; then
+    echo "php.conf exists...continuing"
+  else
+    echo "php.conf does not exist"
+    exit 4
+  fi
+
+else
+  echo "installing php package..."
+  yes | sudo yum install php -y > /dev/null 2>&1
+  echo "php package installed"
+  if [ -f /etc/httpd/conf.d/php.conf ]; then
+    echo "php.conf exists...continuing"
+  else
+    echo "php.conf does not exist"
+    exit 4
+  fi
+fi
+
+# Install mysqld
+yum list installed mysql-server > /dev/null 2>&1
+mysql_return=$?
+yum list installed php-mysql > /dev/null 2>&1
+php_return=$?
+
+if [ $mysql_return -eq 0 ]; then
+  echo "mysql-server is already installed...continuing"
+else
+  echo "installing mysql-server package"
+  yes | sudo yum install mysql-server -y > /dev/null 2>&1
+  echo "mysql-server package installed"
+fi
+
+if [ $php_return -eq 0 ]; then
+  echo "php-mysql is already installed...continuing"
+else
+  echo "installing php-mysql package"
+  yes | sudo yum install php-mysql -y > /dev/null 2>&1
+  echo "php-mysql package installed"
+fi
+
+echo "restarting httpd service"
+sudo service httpd restart > /dev/null 2>&1
+
+sudo chkconfig httpd on > /dev/null 2>&1
+sudo chkconfig mysqld on > /dev/null 2>&1
+
+chkconfig --list httpd
+chkconfig --list mysqld
+echo "Done configuring LAMP"
+
+echo "Populating database"
+sudo wget -O mysql.txt http://boxes.cs.ucr.edu/cs183/mysql > /dev/null 2>&1
+sudo mysql < mysql.txt > /dev/null 2>&1
+sudo rm -f mysql.txt
+echo "database populated"
+
+echo "installing php webpage"
+sudo wget -O gradebook.php http://boxes.cs.ucr.edu/cs183/gradebook > /dev/null 2>&1
+sudo chmod 777 gradebook.php
+sudo mv gradebook.php /var/www/html/
+echo "php webpage installed"
+
+echo "testing webpage correctness"
+wget -O actual.txt 127.0.0.1/gradebook.php > /dev/null 2>&1
+echo "<h1>183 Gradebook</h1> " >> desired.txt
+echo "<pre> " >> desired.txt
+echo "    Claire: 92" >> desired.txt
+echo "       Bob: 90" >> desired.txt
+echo "     Alice: 80" >> desired.txt
+echo "     David: 60" >> desired.txt
+echo "" >> desired.txt
+echo "</pre>" >> desired.txt
+echo "" >> desired.txt
+
+diff -wq actual.txt desired.txt
+if [ $? -eq 1 ]; then
+  echo "incorrect webpage downloaded"
+  sudo rm -f desired.txt
+  exit 8
+else
+  echo "webpage downloaded correctly. LAMP setup done"
+  sudo rm -f desired.txt actual.txt
+  exit 0
+fi
+
+
+exit 0

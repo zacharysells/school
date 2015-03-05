@@ -1,0 +1,16 @@
+1.) Nov 1 level 0
+Nov 3 level 1
+Nov 4 level 2
+Nov 6 level 3
+Nov 7 level 4
+
+Benefits: Not much data is lost if a filesystem fails at any time.
+Drawbacks: Backup must be run at least once a day. This could take a lot of time on a large filesystem.
+
+2.) 172.25.0.2
+2a.) class B network.
+2b.) default subnet mask: 255.255.0.0, 172.25.0.2/16
+
+2c.) 172.25.0.2/24
+2c1.) 172.25.0.1
+2c2.) 172.25.0.255

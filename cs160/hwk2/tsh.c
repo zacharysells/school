@@ -190,7 +190,7 @@ void eval(char *cmdline)
 
   if(access(argv[0], X_OK) == -1)
   {
-    printf("%s: Command not found.\n", argv[0]);
+    printf("%s: Command not found\n", argv[0]);
     return;
   }
 
@@ -206,7 +206,7 @@ void eval(char *cmdline)
     {
       /* Child Process */
       sigprocmask(SIG_UNBLOCK, &mask, NULL);
-      setpgid(0, 0); /* Put child into separate process group from foregorund. */
+      setpgid(0, 0); /* Put child into separate process group from foreground. */
       execvp(argv[0], argv);
       break;
     }
@@ -286,9 +286,10 @@ int parseline(const char *cmdline, char **argv)
     }
     argv[argc] = NULL;
 
-    if (argc == 0)  /* ignore blank line */
+    if (argc == 0)  /* clear argv on blank line */
 	  {
-      // TODO clear argv array
+      for(int i = 0; i < argc; ++i)
+        argv[i] = NULL;
       return 1;
     }
     /* should the job run in the background? */
@@ -300,13 +301,16 @@ int parseline(const char *cmdline, char **argv)
 
 /*
  * builtin_cmd - If the user has typed a built-in command then execute
- *    it immediately.
+ *    it immediately. Also ignores empty commands;d
  */
 int builtin_cmd(char **argv)
 {
-
     char * cmd = argv[0];
-    if(strcmp(cmd, "quit") == 0)
+
+    if(cmd == NULL)
+      return 1;
+
+    else if(strcmp(cmd, "quit") == 0)
       exit(0);
 
     else if(strcmp(cmd, "jobs") == 0)

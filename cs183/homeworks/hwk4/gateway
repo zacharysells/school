@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+$info = `ip route show`;
+
+if ($info =~ /default via (\d+.\d+.\d+.\d+) dev ([a-zA-Z0-9]+)/ )
+{
+	$gateway = $1;
+	$device = $2;
+}
+
+$ifconfig = `ifconfig $2`;
+if( $ifconfig =~ /Mask:(\d+.\d+.\d+.\d+)/ )
+{
+	$netmask = $1;
+
+} 
+
+print "gateway: $gateway netmask: $netmask device: $device\n";
