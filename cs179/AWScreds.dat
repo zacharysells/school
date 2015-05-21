@@ -1,4 +1,0 @@
-export AWS_ACCESS_KEY_ID=AKIAIWFQJKRYUU5BXDBA
-export AWS_SECRET_ACCESS_KEY=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
-export AWS_STORAGE_BUCKET_NAME=ucrlist-static
-export DATABASE_URL=postgres://uoxbjebvptnrea:zSEim9cEcxOhjtdOf_yvtPTjJ0@ec2-23-23-199-181.compute-1.amazonaws.com:5432/dc3bpkqahqq9uc
