@@ -1,3 +1,21 @@
-[submodule "cs152/CS152Project"]
-	path = cs152/CS152Project
+[submodule "cs152/project"]
+	path = cs152/project
 	url = https://github.com/cmartz/CS152Project.git
+[submodule "cs166/project/phase3"]
+	path = cs166/project/phase3
+	url = https://github.com/zacharysells/cs166_2015.git
+[submodule "cs141/assn3"]
+	path = cs141/assn3
+	url = https://github.com/zacharysells/DNA-database-search.git
+[submodule "cs164/lab6/RDT-over-UDP"]
+	path = cs164/lab6/RDT-over-UDP
+	url = https://github.com/xhacker/RDT-over-UDP.git
+[submodule "cs179/ListVerse"]
+	path = cs179/ListVerse
+	url = https://github.com/UCR-CS179-Team7/ListVerse.git
+[submodule "cs180/180Project"]
+	path = cs180/180Project
+	url = https://github.com/zacharysells/180Project.git
+[submodule "cs183/project"]
+	path = cs183/project
+	url = https://github.com/mikebrevard/UnixAdministration.git
