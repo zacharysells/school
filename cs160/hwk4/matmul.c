@@ -56,13 +56,12 @@ int main(int argc, char **argv)
               /* Do the matrix product */
 
               start_time = omp_get_wtime();
-              #pragma omp parallel num_threads(4) private(tmp, i, j, k)
+              #pragma omp parallel num_threads(2) private(tmp, i, j, k)
               {
                 #pragma omp for
                 for (i=0; i<Ndim; i++){
                   for (j=0; j<Mdim; j++){
                     tmp = 0.0;
-                    #pragma omp critical
                     for(k=0;k<Pdim;k++){
                       /* C(i,j) = sum(over k) A(i,k) * B(k,j) */
                       tmp += *(A+(i*Ndim+k)) *  *(B+(k*Pdim+j));

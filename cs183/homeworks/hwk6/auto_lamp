@@ -77,6 +77,8 @@ fi
 
 echo "restarting httpd service"
 sudo service httpd restart > /dev/null 2>&1
+echo "restarting mysql service"
+sudo service mysqld restart > /dev/null 2>&1
 
 sudo chkconfig httpd on > /dev/null 2>&1
 sudo chkconfig mysqld on > /dev/null 2>&1
